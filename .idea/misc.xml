@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.12409420289855072" />
+        <entry key="app/src/main/res/drawable/avatar_1.xml" value="0.135" />
+        <entry key="app/src/main/res/drawable/avatar_14.xml" value="0.135" />
+        <entry key="app/src/main/res/drawable/avatar_2.xml" value="0.1545" />
+        <entry key="app/src/main/res/drawable/avatar_4.xml" value="0.135" />
+        <entry key="app/src/main/res/drawable/background_recyclerview.xml" value="0.1685" />
+        <entry key="app/src/main/res/drawable/background_shape.xml" value="0.118" />
+        <entry key="app/src/main/res/drawable/ic_airplane_1.xml" value="0.137" />
+        <entry key="app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.151" />
+        <entry key="app/src/main/res/drawable/ic_baseline_login_24.xml" value="0.151" />
+        <entry key="app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.151" />
+        <entry key="app/src/main/res/drawable/ic_camera_black_24dp.xml" value="0.135" />
+        <entry key="app/src/main/res/drawable/ic_gallery_black_24dp.xml" value="0.135" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.135" />
+        <entry key="app/src/main/res/drawable/ic_settings_black_24dp.xml" value="0.135" />
+        <entry key="app/src/main/res/drawable/ic_slideshow_black_24dp.xml" value="0.135" />
+        <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.135" />
+        <entry key="app/src/main/res/layout-v26/activity_main.xml" value="0.17135416666666667" />
+        <entry key="app/src/main/res/layout-v26/activity_registration.xml" value="0.18" />
+        <entry key="app/src/main/res/layout-w1240dp/activity_main2.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_assistant.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_edit_flight_preference.xml" value="0.1442982456140351" />
+        <entry key="app/src/main/res/layout/activity_edit_profile.xml" value="0.1442982456140351" />
+        <entry key="app/src/main/res/layout/activity_flight_preference.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_flight_selection.xml" value="0.21" />
+        <entry key="app/src/main/res/layout/activity_itinerary.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_main2.xml" value="0.1442982456140351" />
+        <entry key="app/src/main/res/layout/activity_main_1.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_main_2.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_payment_history.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_registration.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_seat_selection.xml" value="0.1442982456140351" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.15231481481481482" />
+        <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.1442982456140351" />
+        <entry key="app/src/main/res/layout/booking_cardview.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/content_main.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/flight_selection.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_assistant.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_edit_flight_preference.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_payment_history.xml" value="0.13" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_reflow.xml" value="0.1442982456140351" />
+        <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.1442982456140351" />
+        <entry key="app/src/main/res/layout/fragment_transform.xml" value="0.1442982456140351" />
+        <entry key="app/src/main/res/layout/oneway_cardview.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/returnway_cardview.xml" value="0.15138888888888888" />
+        <entry key="app/src/main/res/layout/shop_detail_cardview.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/bottom_navigation.xml" value="0.1442982456140351" />
+        <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_flight_large.xml" value="0.18" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_flight_large_2.xml" value="0.1715" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_flight_large_2_round.xml" value="0.1715" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_flight_large_round.xml" value="0.14" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.135" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_propeller.xml" value="0.123" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_propeller_round.xml" value="0.123" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

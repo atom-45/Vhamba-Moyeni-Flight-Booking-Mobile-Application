@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#D3FFF000</color>
+    <color name="lime">#00FF00</color>
+    <color name="mango">#FFC324</color>
+    <color name="cyan">#00FFFF</color>
+    <color name="light_grey">#534D4D</color>
+    <!--App theme colours-->
+    <color name="green_a">#43A047</color>
+    <color name="green_b">#59FC35</color>
+    <color name="status_bar_color_2">#CE389C</color>
+    <color name="status_bar_color">#580C93</color>
+    <color name="purple">#5F20A1</color>
+    <color name="blue_a">#3559FC</color>
+    <color name="blue_b">#1A8DC1</color>
+    <color name="cherry_red">#FD2155</color>
+    <color name="creamy">#F6D68D</color>
+    <color name="green_c">#3BD441</color>
+    <!-- App test colours -->
+    <color name="cherry_pink">#F260B5</color>
+    <color name="purple_a">#6C3594</color>
+    <color name="light_purple">#9C78B7</color>
+    <color name="pink">#E9118F</color>
+    <color name="dark_pink">#CE389C</color>
+    <color name="cherry">#E42C76</color>
+
+</resources>
