@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_navigation"
+    app:startDestination="@id/menu_home_icon">
+
+    <fragment
+        android:id="@+id/menu_home_icon"
+        android:name="com.atom.flightbookingapplication.fragments.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_paymentFragment"
+            app:destination="@id/menu_paymenthistory_icon"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/menu_paymenthistory_icon"
+        android:name="com.atom.flightbookingapplication.fragments.PaymentHistoryFragment"
+        android:label="Payment History"
+        tools:layout="@layout/fragment_payment_history">
+        <action
+            android:id="@+id/action_paymentFragment_to_flightPreferencesFragment"
+            app:destination="@id/menu_preferences_icon" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/menu_preferences_icon"
+        android:name="com.atom.flightbookingapplication.fragments.FlightPreferenceFragment"
+        android:label="Flight Preferences"
+        tools:layout="@layout/fragment_edit_flight_preference">
+        <action
+            android:id="@+id/action_flightPreferencesFragment_to_accountProfile"
+            app:destination="@id/menu_profile_icon"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/menu_profile_icon"
+        android:name="com.atom.flightbookingapplication.fragments.ProfileFragment"
+        android:label="Account Profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_menu_profile_icon_self"
+            app:destination="@id/menu_profile_icon" />
+    </fragment>
+
+</navigation>
