@@ -48,20 +48,20 @@ public class Constants {
     @NonNull
     public static List<String> weekDates(){
         List<String> weekDates = new ArrayList<>();
-        weekDates.add("2022-09-24");
-        weekDates.add("2022-09-25");
-        weekDates.add("2022-09-26");
-        weekDates.add("2022-09-27");
-        weekDates.add("2022-09-28");
-        weekDates.add("2022-09-29");
-        weekDates.add("2022-09-30");
-        weekDates.add("2022-10-01");
-        weekDates.add("2022-10-02");
-        weekDates.add("2022-10-03");
-        weekDates.add("2022-10-04");
-        weekDates.add("2022-10-05");
-        weekDates.add("2022-10-06");
-        weekDates.add("2022-10-07");
+        weekDates.add("2022-12-28");
+        weekDates.add("2022-12-29");
+        weekDates.add("2022-12-30");
+        weekDates.add("2022-12-31");
+        weekDates.add("2023-01-01");
+        weekDates.add("2023-01-02");
+        weekDates.add("2023-01-03");
+        weekDates.add("2023-01-04");
+        weekDates.add("2023-01-05");
+        weekDates.add("2023-01-06");
+        weekDates.add("2023-01-07");
+        weekDates.add("2023-01-08");
+        weekDates.add("2023-01-09");
+        weekDates.add("2023-01-10");
         return weekDates;
     }
 
