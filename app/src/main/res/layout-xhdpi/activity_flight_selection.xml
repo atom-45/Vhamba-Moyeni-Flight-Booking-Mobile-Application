@@ -15,7 +15,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/dateSelection_textInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            android:layout_width="230dp"
+            android:layout_width="185dp"
             android:layout_height="45dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
@@ -36,8 +36,8 @@
         <TextView
             android:id="@+id/currentFlightDate_textview_a"
             android:layout_width="wrap_content"
-            android:layout_height="45dp"
-            android:layout_marginTop="36dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
             android:gravity="center"
             android:text="Date:"
             android:textColor="@color/black"
@@ -48,7 +48,7 @@
         <TextView
             android:id="@+id/currentFlightDate_textview_b"
             android:layout_width="wrap_content"
-            android:layout_height="45dp"
+            android:layout_height="40dp"
             android:text="Tuesday, 16 August 2022"
             android:gravity="center"
             android:textColor="@color/black"
@@ -58,8 +58,8 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/dateSearch_materialButton"
-            android:layout_width="150dp"
-            android:layout_height="50dp"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
             android:layout_marginEnd="16dp"
             android:text="@string/search"
             app:layout_constraintBottom_toBottomOf="@+id/dateSelection_textInputLayout"
@@ -73,9 +73,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/flightSelection_recyclerView"
             android:layout_width="0dp"
-            android:layout_height="800dp"
+            android:layout_height="550dp"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="128dp"
+            android:layout_marginTop="84dp"
             android:layout_marginEnd="5dp"
             android:background="@drawable/background_recyclerview"
             android:padding="10dp"

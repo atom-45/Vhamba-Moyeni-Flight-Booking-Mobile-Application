@@ -140,8 +140,8 @@
                 android:text="@string/flight_preferences"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/airport_selection3_textInputLayout"
+                app:layout_constraintHorizontal_bias="0.274"
+                app:layout_constraintStart_toStartOf="@+id/materialDivider"
                 app:layout_constraintTop_toTopOf="@+id/materialDivider" />
 
             <com.google.android.material.textfield.TextInputLayout

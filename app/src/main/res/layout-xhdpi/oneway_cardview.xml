@@ -23,8 +23,8 @@
             <TextView
                 android:id="@+id/oneway_flight_date"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:layout_marginTop="28dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="16dp"
                 android:gravity="center"
                 android:paddingStart="2dp"
                 android:text="@string/example_date"
@@ -49,7 +49,7 @@
             <TextView
                 android:id="@+id/flight_number_textview"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="20dp"
                 android:gravity="center"
                 android:hint="Kulula MN102"
                 android:textColor="@color/black"
@@ -60,21 +60,20 @@
 
             <ImageView
                 android:id="@+id/airplane_direction_imageview"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="24dp"
                 android:padding="5dp"
                 android:src="@drawable/airplane_a"
                 app:layout_constraintEnd_toEndOf="@+id/material_divider"
-                app:layout_constraintHorizontal_bias="0.523"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/flight_number_textview"
                 tools:ignore="ContentDescription" />
 
             <ImageView
                 android:id="@+id/departure_imageview"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="16dp"
                 android:padding="1dp"
                 android:src="@drawable/departure"
@@ -141,8 +140,8 @@
 
             <TextView
                 android:id="@+id/airport_from_tv"
-                android:layout_width="203dp"
-                android:layout_height="50dp"
+                android:layout_width="135dp"
+                android:layout_height="35dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="20dp"
                 android:autoSizeMaxTextSize="17sp"
@@ -157,8 +156,8 @@
 
             <TextView
                 android:id="@+id/airport_to_tv"
-                android:layout_width="185dp"
-                android:layout_height="50dp"
+                android:layout_width="135dp"
+                android:layout_height="35dp"
                 android:layout_marginEnd="16dp"
                 android:autoSizeMaxTextSize="17sp"
                 android:autoSizeMinTextSize="9sp"
@@ -174,23 +173,24 @@
                 android:id="@+id/tof_textview"
                 android:layout_width="wrap_content"
                 android:layout_height="22dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="32dp"
                 android:autoSizeMaxTextSize="18sp"
                 android:autoSizeMinTextSize="8sp"
                 android:autoSizeStepGranularity="1sp"
                 android:autoSizeTextType="uniform"
                 android:gravity="center"
+                android:padding="0dp"
                 android:text="Flight Duration: 2hrs"
                 android:textColor="@color/light_grey"
                 app:layout_constraintEnd_toStartOf="@+id/arrival_imageview"
-                app:layout_constraintHorizontal_bias="0.535"
+                app:layout_constraintHorizontal_bias="0.146"
                 app:layout_constraintStart_toEndOf="@+id/departure_imageview"
                 app:layout_constraintTop_toBottomOf="@+id/airplane_direction_imageview" />
 
             <ImageView
                 android:id="@+id/arrival_imageview"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="12dp"
                 android:padding="1dp"
                 android:src="@drawable/arrival"
@@ -204,9 +204,9 @@
                 android:id="@+id/material_divider"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:layout_marginTop="96dp"
+                android:layout_marginTop="64dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tof_textview" />
 
@@ -227,8 +227,8 @@
                 android:id="@+id/fullname_textview1"
                 android:layout_width="0dp"
                 android:layout_height="20dp"
-                android:layout_marginStart="56dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="25dp"
                 android:autoSizeMaxTextSize="24sp"
                 android:autoSizeMinTextSize="10sp"
                 android:autoSizeStepGranularity="1sp"
@@ -242,7 +242,6 @@
                 android:id="@+id/seatnumber_textview1"
                 android:layout_width="100dp"
                 android:layout_height="20dp"
-                android:layout_marginTop="12dp"
                 android:autoSizeMaxTextSize="24sp"
                 android:autoSizeMinTextSize="10sp"
                 android:autoSizeStepGranularity="1sp"
@@ -256,7 +255,6 @@
                 android:id="@+id/seatnumber_textview2"
                 android:layout_width="100dp"
                 android:layout_height="20dp"
-                android:layout_marginTop="12dp"
                 android:autoSizeMaxTextSize="24sp"
                 android:autoSizeMinTextSize="10sp"
                 android:autoSizeStepGranularity="1sp"
@@ -273,7 +271,6 @@
                 android:id="@+id/checkedbags_textview1"
                 android:layout_width="100dp"
                 android:layout_height="20dp"
-                android:layout_marginTop="12dp"
                 android:autoSizeMaxTextSize="24sp"
                 android:autoSizeMinTextSize="10sp"
                 android:autoSizeStepGranularity="1sp"
@@ -289,7 +286,7 @@
                 android:id="@+id/checkedbags_textview2"
                 android:layout_width="100dp"
                 android:layout_height="20dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
                 android:autoSizeMaxTextSize="24sp"
                 android:autoSizeMinTextSize="10sp"
                 android:autoSizeStepGranularity="1sp"
@@ -299,14 +296,15 @@
                 android:textColor="@color/light_grey"
                 app:layout_constraintBottom_toBottomOf="@+id/checkedbags_textview1"
                 app:layout_constraintEnd_toEndOf="@+id/seatnumber_textview2"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="@+id/seatnumber_textview2"
-                app:layout_constraintTop_toBottomOf="@+id/seatnumber_textview2" />
+                app:layout_constraintTop_toBottomOf="@+id/seatnumber_textview2"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/plane_class_textview1"
                 android:layout_width="100dp"
                 android:layout_height="20dp"
-                android:layout_marginTop="12dp"
                 android:autoSizeMaxTextSize="24sp"
                 android:autoSizeMinTextSize="10sp"
                 android:autoSizeStepGranularity="1sp"
@@ -322,7 +320,6 @@
                 android:id="@+id/plane_class_textview2"
                 android:layout_width="100dp"
                 android:layout_height="20dp"
-                android:layout_marginTop="12dp"
                 android:autoSizeMaxTextSize="24sp"
                 android:autoSizeMinTextSize="10sp"
                 android:autoSizeStepGranularity="1sp"
@@ -332,8 +329,10 @@
                 android:textColor="@color/light_grey"
                 app:layout_constraintBottom_toBottomOf="@+id/plane_class_textview1"
                 app:layout_constraintEnd_toEndOf="@+id/checkedbags_textview2"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/checkedbags_textview2"
                 app:layout_constraintTop_toBottomOf="@+id/checkedbags_textview2" />
+
 
             <TextView
                 android:id="@+id/fullname_textview2"
@@ -349,17 +348,15 @@
                 android:textColor="@color/light_grey"
                 app:layout_constraintBottom_toBottomOf="@+id/fullname_textview1"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.866"
+                app:layout_constraintHorizontal_bias="0.913"
                 app:layout_constraintStart_toEndOf="@+id/fullname_textview1"
                 app:layout_constraintTop_toTopOf="@+id/fullname_textview1"
                 app:layout_constraintVertical_bias="0.0" />
-
 
             <TextView
                 android:id="@+id/total_ticketprice_textview1"
                 android:layout_width="100dp"
                 android:layout_height="20dp"
-                android:layout_marginTop="12dp"
                 android:autoSizeMaxTextSize="24sp"
                 android:autoSizeMinTextSize="10sp"
                 android:autoSizeStepGranularity="1sp"
@@ -394,7 +391,6 @@
                 android:id="@+id/bookingReference_textview_a"
                 android:layout_width="120dp"
                 android:layout_height="20dp"
-                android:layout_marginTop="12dp"
                 android:layout_marginBottom="40dp"
                 android:autoSizeMaxTextSize="24sp"
                 android:autoSizeMinTextSize="10sp"
@@ -405,15 +401,13 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/total_ticketprice_textview1"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/total_ticketprice_textview1"
-                app:layout_constraintTop_toBottomOf="@+id/total_ticketprice_textview1"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintStart_toStartOf="@+id/total_ticketprice_textview1" />
 
             <TextView
                 android:id="@+id/bookingReference_textview_b"
                 android:layout_width="120dp"
                 android:layout_height="20dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="0dp"
                 android:autoSizeMaxTextSize="24sp"
                 android:autoSizeMinTextSize="10sp"
                 android:autoSizeStepGranularity="1sp"
