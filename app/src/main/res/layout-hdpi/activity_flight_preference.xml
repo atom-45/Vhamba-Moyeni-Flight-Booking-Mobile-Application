@@ -24,12 +24,12 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="56dp"
+                android:indeterminate="true"
                 android:padding="9dp"
                 android:visibility="invisible"
-                android:indeterminate="true"
                 app:layout_constraintBottom_toTopOf="@+id/materialDivider3"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintHorizontal_bias="0.403"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/flight_preference_tv"
                 app:layout_constraintVertical_bias="0.0" />
@@ -37,7 +37,7 @@
             <TextView
                 android:id="@+id/airport_selection_textview"
                 android:layout_width="280dp"
-                android:layout_height="45dp"
+                android:layout_height="30dp"
                 android:layout_marginTop="16dp"
                 android:autoSizeMaxTextSize="25sp"
                 android:autoSizeMinTextSize="12sp"
@@ -47,14 +47,13 @@
                 android:text="@string/airport_selection"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.256"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/airport_selection1_textInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                android:layout_width="315dp"
+                android:layout_width="255dp"
                 android:layout_height="52dp"
                 android:layout_marginTop="12dp"
                 android:hint="@string/first_airport"
@@ -75,7 +74,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/airport_selection2_textInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                android:layout_width="315dp"
+                android:layout_width="0dp"
                 android:layout_height="52dp"
                 android:layout_marginTop="15dp"
                 android:hint="@string/second_airport"
@@ -96,7 +95,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/airport_selection3_textInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                android:layout_width="315dp"
+                android:layout_width="0dp"
                 android:layout_height="52dp"
                 android:layout_marginTop="16dp"
                 android:hint="@string/third_airport"
@@ -127,7 +126,7 @@
             <TextView
                 android:id="@+id/flight_preference_tv"
                 android:layout_width="236dp"
-                android:layout_height="36dp"
+                android:layout_height="30dp"
                 android:layout_marginTop="8dp"
                 android:autoSizeMaxTextSize="20sp"
                 android:autoSizeMinTextSize="12sp"
@@ -144,7 +143,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/bagnumber_textInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="150dp"
+                android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="16dp"
                 android:hint="@string/no_of_bags"
@@ -164,7 +163,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:id="@+id/class_textInputLayout"
-                android:layout_width="150dp"
+                android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="24dp"
                 android:hint="@string/airplane_class"
@@ -185,7 +184,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/seat_selection_textInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                android:layout_width="150dp"
+                android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="20dp"
                 android:hint="@string/seat"
@@ -208,7 +207,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/food_textInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                android:layout_width="150dp"
+                android:layout_width="100dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="24dp"
                 android:hint="@string/food"
@@ -240,7 +239,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/cardnumber_textInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="315dp"
+                android:layout_width="255dp"
                 android:layout_height="52dp"
                 android:layout_marginTop="12dp"
                 android:hint="@string/card_format"
@@ -303,7 +302,7 @@
             <TextView
                 android:id="@+id/card_details_textview"
                 android:layout_width="123dp"
-                android:layout_height="35dp"
+                android:layout_height="30dp"
                 android:layout_marginTop="8dp"
                 android:autoSizeMaxTextSize="20sp"
                 android:autoSizeMinTextSize="12sp"
@@ -319,7 +318,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/proceed_materialButton"
-                android:layout_width="200dp"
+                android:layout_width="150dp"
                 android:layout_height="55dp"
                 android:layout_marginTop="44dp"
                 android:layout_marginBottom="35dp"

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -14,10 +15,10 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/dateSelection_textInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            android:layout_width="200dp"
-            android:layout_height="40dp"
+            android:layout_width="230dp"
+            android:layout_height="45dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="32dp"
             android:hint="@string/date_selection"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -26,8 +27,8 @@
                 android:id="@+id/dateSelection_textView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:textColor="@color/black"
                 android:padding="2dp"
+                android:textColor="@color/black"
                 android:textSize="15sp"
                 tools:ignore="LabelFor" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -35,8 +36,9 @@
         <TextView
             android:id="@+id/currentFlightDate_textview_a"
             android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_marginTop="24dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="36dp"
+            android:gravity="center"
             android:text="Date:"
             android:textColor="@color/black"
             android:textSize="18sp"
@@ -46,8 +48,9 @@
         <TextView
             android:id="@+id/currentFlightDate_textview_b"
             android:layout_width="wrap_content"
-            android:layout_height="25dp"
+            android:layout_height="45dp"
             android:text="Tuesday, 16 August 2022"
+            android:gravity="center"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@+id/dateSearch_materialButton"
@@ -55,8 +58,8 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/dateSearch_materialButton"
-            android:layout_width="100dp"
-            android:layout_height="45dp"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
             android:layout_marginEnd="16dp"
             android:text="@string/search"
             app:layout_constraintBottom_toBottomOf="@+id/dateSelection_textInputLayout"
@@ -70,9 +73,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/flightSelection_recyclerView"
             android:layout_width="0dp"
-            android:layout_height="600dp"
+            android:layout_height="800dp"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="68dp"
+            android:layout_marginTop="128dp"
             android:layout_marginEnd="5dp"
             android:background="@drawable/background_recyclerview"
             android:padding="10dp"

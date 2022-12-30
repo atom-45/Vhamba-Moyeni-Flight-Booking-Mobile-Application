@@ -23,7 +23,7 @@
             <TextView
                 android:id="@+id/oneway_flight_date"
                 android:layout_width="wrap_content"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="28dp"
                 android:gravity="center"
                 android:paddingStart="2dp"
@@ -37,8 +37,8 @@
 
             <ImageView
                 android:id="@+id/flight_date_imageview"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:padding="5dp"
                 android:src="@drawable/calendar"
                 app:layout_constraintBottom_toBottomOf="@+id/oneway_flight_date"
@@ -49,7 +49,7 @@
             <TextView
                 android:id="@+id/flight_number_textview"
                 android:layout_width="0dp"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:gravity="center"
                 android:hint="Kulula MN102"
                 android:textColor="@color/black"
@@ -60,12 +60,13 @@
 
             <ImageView
                 android:id="@+id/airplane_direction_imageview"
-                android:layout_width="54dp"
-                android:layout_height="46dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:padding="5dp"
                 android:src="@drawable/airplane_a"
                 app:layout_constraintEnd_toEndOf="@+id/material_divider"
+                app:layout_constraintHorizontal_bias="0.523"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/flight_number_textview"
                 tools:ignore="ContentDescription" />
@@ -140,8 +141,8 @@
 
             <TextView
                 android:id="@+id/airport_from_tv"
-                android:layout_width="143dp"
-                android:layout_height="45dp"
+                android:layout_width="203dp"
+                android:layout_height="50dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="20dp"
                 android:autoSizeMaxTextSize="17sp"
@@ -156,8 +157,8 @@
 
             <TextView
                 android:id="@+id/airport_to_tv"
-                android:layout_width="144dp"
-                android:layout_height="46dp"
+                android:layout_width="185dp"
+                android:layout_height="50dp"
                 android:layout_marginEnd="16dp"
                 android:autoSizeMaxTextSize="17sp"
                 android:autoSizeMinTextSize="9sp"

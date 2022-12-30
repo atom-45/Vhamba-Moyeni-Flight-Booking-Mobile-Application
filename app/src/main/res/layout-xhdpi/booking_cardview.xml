@@ -31,9 +31,9 @@
                 android:autoSizeMinTextSize="10sp"
                 android:autoSizeStepGranularity="1sp"
                 android:autoSizeTextType="uniform"
+                android:text="@{ticket.flightNumber}"
                 android:gravity="start|center"
                 android:textColor="@color/black"
-                android:text="@{ticket.flightNumber}"
                 app:layout_constraintEnd_toEndOf="@+id/payment_airline"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/payment_airline"
@@ -92,8 +92,8 @@
                 android:autoSizeStepGranularity="1sp"
                 android:autoSizeTextType="uniform"
                 android:gravity="center"
-                android:text="@{ticket.flightDate}"
                 android:textColor="@color/light_grey"
+                android:text="@{ticket.flightDate}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/payment_flightDate_1"
                 app:layout_constraintTop_toBottomOf="@+id/reference_textview_b" />
@@ -154,8 +154,8 @@
                 android:autoSizeStepGranularity="1sp"
                 android:autoSizeTextType="uniform"
                 android:gravity="center"
-                android:text="@{ticket.arrival.airportName}"
                 android:textColor="@color/black"
+                android:text="@{ticket.arrival.airportName}"
                 app:layout_constraintEnd_toEndOf="@+id/payment_flightFrom_2"
                 app:layout_constraintStart_toStartOf="@+id/payment_flightFrom_2"
                 app:layout_constraintTop_toBottomOf="@+id/payment_flightFrom_2" />
@@ -252,8 +252,8 @@
                 android:autoSizeStepGranularity="1sp"
                 android:autoSizeTextType="uniform"
                 android:gravity="center"
-                android:text='@{"R "+String.format("%.2f",ticket.ticketPrice)}'
                 android:textColor="@color/black"
+                android:text='@{"R "+String.format("%.2f",ticket.ticketPrice)}'
                 app:layout_constraintEnd_toEndOf="@+id/payment_flightDuration_2"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/payment_flightDuration_2"

@@ -15,7 +15,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/flightstatus_cardView"
             android:layout_width="match_parent"
-            android:layout_height="125dp"
+            android:layout_height="100dp"
             android:layout_margin="6dp"
             app:cardBackgroundColor="@color/cherry_red"
             app:cardCornerRadius="8dp"
@@ -32,8 +32,8 @@
 
                 <ImageView
                     android:id="@+id/next_flight_imageview"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
                     android:layout_marginEnd="15dp"
                     android:padding="6dp"
                     android:src="@drawable/direct_flight_b"
@@ -47,8 +47,8 @@
 
                 <TextView
                     android:id="@+id/nextFlight_textView"
-                    android:layout_width="70dp"
-                    android:layout_height="25dp"
+                    android:layout_width="60dp"
+                    android:layout_height="15dp"
                     android:layout_marginStart="16dp"
                     android:autoSizeMaxTextSize="13sp"
                     android:autoSizeMinTextSize="9sp"
@@ -64,7 +64,7 @@
                 <TextView
                     android:id="@+id/datetime_textView_a"
                     android:layout_width="50dp"
-                    android:layout_height="35dp"
+                    android:layout_height="25dp"
                     android:autoSizeMaxTextSize="13sp"
                     android:autoSizeMinTextSize="9sp"
                     android:autoSizeStepGranularity="1sp"
@@ -78,10 +78,10 @@
 
                 <TextView
                     android:id="@+id/datetime_textview_b"
-                    android:layout_width="150dp"
-                    android:layout_height="35dp"
+                    android:layout_width="120dp"
+                    android:layout_height="25dp"
                     android:autoSizeMaxTextSize="14sp"
-                    android:autoSizeMinTextSize="9sp"
+                    android:autoSizeMinTextSize="5sp"
                     android:autoSizeStepGranularity="1sp"
                     android:autoSizeTextType="uniform"
                     android:gravity="center"
@@ -94,7 +94,7 @@
                 <TextView
                     android:id="@+id/flightNumberAndAirline_ma_textView"
                     android:layout_width="wrap_content"
-                    android:layout_height="25dp"
+                    android:layout_height="15dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="100dp"
@@ -114,7 +114,6 @@
                     android:id="@+id/timema_textview_a"
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
-                    android:layout_marginTop="4dp"
                     android:layout_marginEnd="16dp"
                     android:gravity="start|center"
                     android:textColor="@color/black"
@@ -125,7 +124,7 @@
                 <TextView
                     android:id="@+id/from_textview_a"
                     android:layout_width="wrap_content"
-                    android:layout_height="25dp"
+                    android:layout_height="15dp"
                     android:autoSizeMaxTextSize="13sp"
                     android:autoSizeMinTextSize="9sp"
                     android:autoSizeStepGranularity="1sp"
@@ -139,10 +138,10 @@
 
                 <TextView
                     android:id="@+id/from_airport_textview"
-                    android:layout_width="200dp"
-                    android:layout_height="25dp"
+                    android:layout_width="130dp"
+                    android:layout_height="15dp"
                     android:autoSizeMaxTextSize="16sp"
-                    android:autoSizeMinTextSize="9sp"
+                    android:autoSizeMinTextSize="7sp"
                     android:autoSizeStepGranularity="1sp"
                     android:autoSizeTextType="uniform"
                     android:gravity="center"
@@ -155,7 +154,7 @@
                 <TextView
                     android:id="@+id/to_airport_textview"
                     android:layout_width="200dp"
-                    android:layout_height="25dp"
+                    android:layout_height="15dp"
                     android:autoSizeMaxTextSize="16sp"
                     android:autoSizeMinTextSize="9sp"
                     android:autoSizeStepGranularity="1sp"
@@ -169,7 +168,7 @@
                 <TextView
                     android:id="@+id/to_textview_a"
                     android:layout_width="wrap_content"
-                    android:layout_height="25dp"
+                    android:layout_height="15dp"
                     android:autoSizeMaxTextSize="13sp"
                     android:autoSizeMinTextSize="9sp"
                     android:autoSizeStepGranularity="1sp"
@@ -186,7 +185,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/checked_in_cardView"
             android:layout_width="150dp"
-            android:layout_height="30dp"
+            android:layout_height="25dp"
             android:layout_margin="6dp"
             app:cardBackgroundColor="@color/light_purple"
             app:cardCornerRadius="8dp"
@@ -227,7 +226,7 @@
             android:id="@+id/materialDivider4"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -235,8 +234,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cemair_cardview"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             app:cardBackgroundColor="@color/light_purple"
             app:cardCornerRadius="6dp"
             app:cardElevation="5dp"
@@ -253,8 +252,8 @@
                 tools:ignore="UseCompoundDrawables">
 
                 <ImageView
-                    android:layout_width="145dp"
-                    android:layout_height="120dp"
+                    android:layout_width="100dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
                     android:padding="10dp"
                     android:src="@drawable/flycemair_logo_2"
@@ -276,8 +275,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/saalink_cardview"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             app:cardBackgroundColor="@color/light_purple"
             app:cardCornerRadius="6dp"
             app:cardElevation="5dp"
@@ -294,7 +293,7 @@
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
                     android:padding="10dp"
                     android:src="@drawable/sa_airlink_logo_2"
@@ -315,8 +314,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/saa_cardview"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginTop="10dp"
             app:cardBackgroundColor="@color/light_purple"
             app:cardCornerRadius="6dp"
@@ -335,7 +334,7 @@
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center|bottom"
                     android:padding="10dp"
                     android:src="@drawable/saa_logo_2"
@@ -358,8 +357,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/flysafair_cardview"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             app:cardBackgroundColor="@color/light_purple"
             app:cardCornerRadius="5dp"
             app:cardElevation="5dp"
@@ -376,7 +375,7 @@
 
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
+                    android:layout_height="80dp"
                     android:layout_gravity="center"
                     android:padding="10dp"
                     android:src="@drawable/flysafair_logo_2"
@@ -399,7 +398,7 @@
             android:id="@+id/materialDivider5"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -409,7 +408,7 @@
             android:id="@+id/shopView_viewPager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.495"

@@ -32,8 +32,8 @@
                 android:autoSizeStepGranularity="1sp"
                 android:autoSizeTextType="uniform"
                 android:gravity="start|center"
-                android:textColor="@color/black"
                 android:text="@{ticket.flightNumber}"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="@+id/payment_airline"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/payment_airline"
@@ -252,8 +252,8 @@
                 android:autoSizeStepGranularity="1sp"
                 android:autoSizeTextType="uniform"
                 android:gravity="center"
-                android:text='@{"R "+String.format("%.2f",ticket.ticketPrice)}'
                 android:textColor="@color/black"
+                android:text='@{"R "+String.format("%.2f",ticket.ticketPrice)}'
                 app:layout_constraintEnd_toEndOf="@+id/payment_flightDuration_2"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/payment_flightDuration_2"

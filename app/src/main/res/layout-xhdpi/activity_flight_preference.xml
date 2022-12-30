@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  tools:context=".activities.FlightPreferenceActivity" -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ProgressBar
+            android:id="@+id/flightPref_progressBar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="92dp"
+            android:indeterminate="true"
+            android:padding="9dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/materialDivider3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/airport_selection_textview"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="40dp"
+            android:autoSizeMaxTextSize="25sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="casual"
+            android:text="@string/airport_selection"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.184"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/airport_selection1_textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="445dp"
+            android:layout_height="52dp"
+            android:hint="@string/first_airport"
+            app:layout_constraintBottom_toTopOf="@+id/airport_selection2_textInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/airport_selection_textview">
+
+            <AutoCompleteTextView
+                android:id="@+id/first_airport_selection"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                tools:ignore="LabelFor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/airport_selection2_textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="445dp"
+            android:layout_height="52dp"
+            android:hint="@string/second_airport"
+            app:layout_constraintBottom_toTopOf="@+id/airport_selection3_textInputLayout"
+            app:layout_constraintEnd_toEndOf="@+id/airport_selection1_textInputLayout"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/airport_selection1_textInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/airport_selection1_textInputLayout">
+
+            <AutoCompleteTextView
+                android:id="@+id/second_airport_selection"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                tools:ignore="LabelFor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/airport_selection3_textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="445dp"
+            android:layout_height="52dp"
+            android:hint="@string/third_airport"
+            app:layout_constraintBottom_toTopOf="@+id/materialDivider"
+            app:layout_constraintEnd_toEndOf="@+id/airport_selection2_textInputLayout"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/airport_selection2_textInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/airport_selection2_textInputLayout">
+
+            <AutoCompleteTextView
+                android:id="@+id/third_airport_selection"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                tools:ignore="LabelFor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintBottom_toTopOf="@+id/flight_preference_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/flight_preference_tv"
+            android:layout_width="256dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="224dp"
+            android:layout_marginBottom="100dp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="casual"
+            android:text="@string/flight_preferences"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/flightPref_progressBar"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/bagnumber_textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="165dp"
+            android:layout_height="50dp"
+            android:hint="@string/no_of_bags"
+            app:layout_constraintBottom_toTopOf="@+id/food_textInputLayout"
+            app:layout_constraintEnd_toStartOf="@+id/seat_selection_textInputLayout"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/flight_preference_tv">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/bagNumber_textInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|center"
+                android:inputType="number"
+                android:padding="2dp"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/class_textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="165dp"
+            android:layout_height="50dp"
+            android:hint="@string/airplane_class"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/food_textInputLayout"
+            app:layout_constraintTop_toTopOf="@+id/food_textInputLayout">
+
+            <AutoCompleteTextView
+                android:id="@+id/class_selection"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|center"
+                android:inputType="text"
+                android:padding="1dp"
+                android:textColor="@color/black"
+                tools:ignore="LabelFor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/seat_selection_textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="165dp"
+            android:layout_height="50dp"
+            android:hint="@string/seat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/bagnumber_textInputLayout"
+            app:layout_constraintTop_toTopOf="@+id/bagnumber_textInputLayout">
+
+            <AutoCompleteTextView
+                android:id="@+id/seat_selection"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|center"
+                android:inputType="text"
+                android:padding="2dp"
+                android:textColor="@color/black"
+                tools:ignore="LabelFor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/food_textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="165dp"
+            android:layout_height="50dp"
+            android:hint="@string/food"
+            app:layout_constraintBottom_toTopOf="@+id/materialDivider3"
+            app:layout_constraintEnd_toStartOf="@+id/class_textInputLayout"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bagnumber_textInputLayout">
+
+            <AutoCompleteTextView
+                android:id="@+id/food_selection"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|center"
+                android:inputType="text"
+                android:padding="2dp"
+                android:textColor="@color/black"
+                tools:ignore="LabelFor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider3"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginBottom="40dp"
+            app:layout_constraintBottom_toTopOf="@+id/card_details_textview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cardnumber_textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="445dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="8dp"
+            android:hint="@string/card_format"
+            app:hintAnimationEnabled="true"
+            app:layout_constraintBottom_toTopOf="@+id/expirydate_textInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/card_details_textview">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cardNumber_textInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="text"
+                android:padding="4dp"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cvv_textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="175dp"
+            android:layout_height="60dp"
+            android:hint="@string/cvv"
+            app:layout_constraintBottom_toBottomOf="@+id/expirydate_textInputLayout"
+            app:layout_constraintEnd_toEndOf="@+id/cardnumber_textInputLayout"
+            app:layout_constraintTop_toTopOf="@+id/expirydate_textInputLayout"
+            app:layout_constraintVertical_bias="0.0">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cvv_textInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|center"
+                android:inputType="text"
+                android:padding="5dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/expirydate_textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="175dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="20dp"
+            android:hint="@string/expiry_date"
+            app:layout_constraintBottom_toTopOf="@+id/proceed_materialButton"
+            app:layout_constraintEnd_toStartOf="@+id/cvv_textInputLayout"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/cardnumber_textInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/expiryDate_textInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|center"
+                android:inputType="text"
+                android:padding="5dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/card_details_textview"
+            android:layout_width="123dp"
+            android:layout_height="35dp"
+            android:layout_marginBottom="50dp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="casual"
+            android:text="@string/card_details"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/cardnumber_textInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="@+id/materialDivider3" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/proceed_materialButton"
+            android:layout_width="200dp"
+            android:layout_height="55dp"
+            android:layout_marginBottom="164dp"
+            android:text="@string/proceed"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/cvv_textInputLayout"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="@+id/expirydate_textInputLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+<!-- <ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical"
+    android:scrollbarStyle="outsideOverlay"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:id="@+id/flightPref_progressBar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="56dp"
+            android:padding="9dp"
+            android:visibility="invisible"
+            android:indeterminate="true"
+            app:layout_constraintBottom_toTopOf="@+id/materialDivider3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/flight_preference_tv"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/airport_selection_textview"
+            android:layout_width="280dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:autoSizeMaxTextSize="25sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="casual"
+            android:text="@string/airport_selection"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.256"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/airport_selection1_textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="315dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="12dp"
+            android:hint="@string/first_airport"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/airport_selection_textview"
+            app:layout_constraintTop_toBottomOf="@+id/airport_selection_textview">
+
+            <AutoCompleteTextView
+                android:id="@+id/first_airport_selection"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                tools:ignore="LabelFor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/airport_selection2_textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="315dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="15dp"
+            android:hint="@string/second_airport"
+            app:layout_constraintEnd_toEndOf="@+id/airport_selection1_textInputLayout"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/airport_selection1_textInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/airport_selection1_textInputLayout">
+
+            <AutoCompleteTextView
+                android:id="@+id/second_airport_selection"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                tools:ignore="LabelFor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/airport_selection3_textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="315dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="16dp"
+            android:hint="@string/third_airport"
+            app:layout_constraintEnd_toEndOf="@+id/airport_selection2_textInputLayout"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/airport_selection2_textInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/airport_selection2_textInputLayout">
+
+            <AutoCompleteTextView
+                android:id="@+id/third_airport_selection"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="5dp"
+                android:textColor="@color/black"
+                tools:ignore="LabelFor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/airport_selection3_textInputLayout" />
+
+        <TextView
+            android:id="@+id/flight_preference_tv"
+            android:layout_width="236dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="8dp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="casual"
+            android:text="@string/flight_preferences"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/airport_selection3_textInputLayout"
+            app:layout_constraintTop_toTopOf="@+id/materialDivider" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/bagnumber_textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:hint="@string/no_of_bags"
+            app:layout_constraintStart_toStartOf="@+id/flight_preference_tv"
+            app:layout_constraintTop_toBottomOf="@+id/flight_preference_tv">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/bagNumber_textInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|center"
+                android:inputType="number"
+                android:padding="2dp"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:id="@+id/class_textInputLayout"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="24dp"
+            android:hint="@string/airplane_class"
+            app:layout_constraintEnd_toEndOf="@+id/seat_selection_textInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/seat_selection_textInputLayout">
+
+            <AutoCompleteTextView
+                android:id="@+id/class_selection"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|center"
+                android:inputType="text"
+                android:padding="1dp"
+                android:textColor="@color/black"
+                tools:ignore="LabelFor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/seat_selection_textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:hint="@string/seat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/bagnumber_textInputLayout"
+            app:layout_constraintTop_toTopOf="@+id/bagnumber_textInputLayout">
+
+            <AutoCompleteTextView
+                android:id="@+id/seat_selection"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|center"
+                android:inputType="text"
+                android:padding="2dp"
+                android:textColor="@color/black"
+                tools:ignore="LabelFor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/food_textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="24dp"
+            android:hint="@string/food"
+            app:layout_constraintBottom_toBottomOf="@+id/class_textInputLayout"
+            app:layout_constraintStart_toStartOf="@+id/bagnumber_textInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/bagnumber_textInputLayout">
+
+            <AutoCompleteTextView
+                android:id="@+id/food_selection"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|center"
+                android:inputType="text"
+                android:padding="2dp"
+                android:textColor="@color/black"
+                tools:ignore="LabelFor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider3"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/class_textInputLayout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cardnumber_textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="315dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="12dp"
+            android:hint="@string/card_format"
+            app:hintAnimationEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/card_details_textview"
+            app:layout_constraintTop_toBottomOf="@+id/card_details_textview">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cardNumber_textInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="4dp"
+                android:inputType="text"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cvv_textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="115dp"
+            android:layout_height="58dp"
+            android:hint="@string/cvv"
+            app:layout_constraintBottom_toBottomOf="@+id/expirydate_textInputLayout"
+            app:layout_constraintEnd_toEndOf="@+id/cardnumber_textInputLayout"
+            app:layout_constraintTop_toTopOf="@+id/expirydate_textInputLayout"
+            app:layout_constraintVertical_bias="0.0">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/cvv_textInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|center"
+                android:inputType="text"
+                android:padding="5dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/expirydate_textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="115dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="8dp"
+            android:hint="@string/expiry_date"
+            app:layout_constraintEnd_toStartOf="@+id/cvv_textInputLayout"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/cardnumber_textInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/cardnumber_textInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/expiryDate_textInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|center"
+                android:inputType="text"
+                android:padding="5dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/card_details_textview"
+            android:layout_width="123dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="8dp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="casual"
+            android:text="@string/card_details"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/food_textInputLayout"
+            app:layout_constraintTop_toTopOf="@+id/materialDivider3" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/proceed_materialButton"
+            android:layout_width="200dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginBottom="35dp"
+            android:text="@string/proceed"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/cvv_textInputLayout"
+            app:layout_constraintHorizontal_bias="0.582"
+            app:layout_constraintStart_toStartOf="@+id/expirydate_textInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/expirydate_textInputLayout"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView> -->

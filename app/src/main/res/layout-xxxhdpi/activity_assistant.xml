@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.AssistantActivity">
+
+        <TextView
+            android:id="@+id/check_in_text"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeMinTextSize="15sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:gravity="start|center"
+            android:text="@string/check_in"
+            android:textColor="@color/black"
+            android:fontFamily="casual"
+            app:layout_constraintBottom_toBottomOf="@+id/assistant_checkIn_materialButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/assistant_checkIn_materialButton"
+            app:layout_constraintVertical_bias="1.0" />
+
+
+        <TextView
+            android:id="@+id/bagdrop_qrcode_textview"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeMinTextSize="10sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:gravity="start|center"
+            android:fontFamily="casual"
+            android:text="@string/bag_drop_code"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/materialDivider7"
+            app:layout_constraintHorizontal_bias="0.065"
+            app:layout_constraintStart_toStartOf="@+id/materialDivider7"
+            app:layout_constraintTop_toBottomOf="@+id/materialDivider7" />
+
+        <ImageView
+            android:id="@+id/bagdrop__qrcode_imageview"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="40dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toTopOf="@+id/materialDivider6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bagdrop_qrcode_textview"
+            app:layout_constraintVertical_bias="0.368"
+            tools:ignore="ContentDescription" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/assistant_checkIn_materialButton"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/check"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.703"
+            app:layout_constraintStart_toEndOf="@+id/check_in_text"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/customer_service_textview"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeMinTextSize="10sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:gravity="start|center"
+            android:text="@string/customer_service_emergency"
+            android:textColor="@color/black"
+            android:fontFamily="casual"
+            app:layout_constraintBottom_toTopOf="@+id/customer_service_textinputlayout"
+            app:layout_constraintEnd_toEndOf="@+id/materialDivider6"
+            app:layout_constraintHorizontal_bias="0.111"
+            app:layout_constraintStart_toStartOf="@+id/materialDivider6" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/customer_service_textinputlayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="250dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="68dp"
+            android:hint="@string/customer_service"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/assistant_submit_materialButton"
+            app:layout_constraintHorizontal_bias="0.12"
+            app:layout_constraintStart_toStartOf="@+id/materialDivider6">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/customerService_editText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textMultiLine"
+                android:padding="5dp"
+                android:textSize="12sp"
+                android:gravity="start|top"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/assistant_submit_materialButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="28dp"
+            android:text="@string/submit"
+            app:layout_constraintBottom_toBottomOf="@+id/customer_service_textinputlayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/customer_service_textinputlayout"
+            app:layout_constraintVertical_bias="0.44" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider6"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/customer_service_textview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider7"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/check_in_text" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
+<!-- <ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AssistantActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/check_in_text"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeMinTextSize="15sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:gravity="start|center"
+            android:text="@string/check_in"
+            android:textColor="@color/black"
+            android:fontFamily="casual"
+            app:layout_constraintBottom_toBottomOf="@+id/assistant_checkIn_materialButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/assistant_checkIn_materialButton"
+            app:layout_constraintVertical_bias="1.0" />
+
+
+        <TextView
+            android:id="@+id/bagdrop_qrcode_textview"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeMinTextSize="10sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:gravity="start|center"
+            android:fontFamily="casual"
+            android:text="@string/bag_drop_code"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/materialDivider7"
+            app:layout_constraintHorizontal_bias="0.065"
+            app:layout_constraintStart_toStartOf="@+id/materialDivider7"
+            app:layout_constraintTop_toBottomOf="@+id/materialDivider7" />
+
+        <ImageView
+            android:id="@+id/bagdrop__qrcode_imageview"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="40dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintBottom_toTopOf="@+id/materialDivider6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bagdrop_qrcode_textview"
+            app:layout_constraintVertical_bias="1.0"
+            tools:ignore="ContentDescription" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/assistant_checkIn_materialButton"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/check"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.703"
+            app:layout_constraintStart_toEndOf="@+id/check_in_text"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/customer_service_textview"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="20dp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeMinTextSize="10sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:gravity="start|center"
+            android:text="@string/customer_service_emergency"
+            android:textColor="@color/black"
+            android:fontFamily="casual"
+            app:layout_constraintBottom_toTopOf="@+id/customer_service_textinputlayout"
+            app:layout_constraintEnd_toEndOf="@+id/materialDivider6"
+            app:layout_constraintHorizontal_bias="0.111"
+            app:layout_constraintStart_toStartOf="@+id/materialDivider6" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/customer_service_textinputlayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="210dp"
+            android:layout_height="150dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="68dp"
+            android:hint="@string/customer_service"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/assistant_submit_materialButton"
+            app:layout_constraintHorizontal_bias="0.12"
+            app:layout_constraintStart_toStartOf="@+id/materialDivider6">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/customerService_editText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textMultiLine"
+                android:padding="5dp"
+                android:textSize="12sp"
+                android:gravity="start|top"
+                android:textColor="@color/black" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/assistant_submit_materialButton"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="28dp"
+            android:text="@string/submit"
+            app:layout_constraintBottom_toBottomOf="@+id/customer_service_textinputlayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/customer_service_textinputlayout"
+            app:layout_constraintVertical_bias="0.44" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider6"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/customer_service_textview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider7"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="28dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/check_in_text"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView> -->

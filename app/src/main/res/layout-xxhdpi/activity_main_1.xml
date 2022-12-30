@@ -12,16 +12,24 @@
         android:layout_height="match_parent"
         tools:context=".activities.MainActivity">
 
-        <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/nav_host_container"
-            android:name="androidx.navigation.fragment.NavHostFragment"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="740dp"
-            app:defaultNavHost="true"
+            android:layout_height="695dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:navGraph="@navigation/bottom_navigation_bar" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/nav_host_container"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="695dp"
+                app:defaultNavHost="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navGraph="@navigation/bottom_navigation_bar" />
+        </ScrollView>
 
         <me.ibrahimsn.lib.SmoothBottomBar
             android:id="@+id/smoothBottomBar1"

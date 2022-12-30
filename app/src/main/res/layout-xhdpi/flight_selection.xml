@@ -10,7 +10,6 @@
         <variable
             name="price"
             type="Double" />
-
     </data>
 
     <androidx.cardview.widget.CardView
