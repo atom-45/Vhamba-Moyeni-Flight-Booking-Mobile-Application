@@ -4,14 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.atom.flightbookingapplication.R;
 import com.atom.flightbookingapplication.activities.ItineraryActivity;
+import com.atom.flightbookingapplication.databinding.FlightSelectionBinding;
 import com.atom.flightbookingapplication.models.Arrival;
 import com.atom.flightbookingapplication.models.Constants;
 import com.atom.flightbookingapplication.models.Departure;
@@ -21,7 +22,6 @@ import com.atom.flightbookingapplication.models.TicketPrice;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -29,11 +29,11 @@ import java.util.stream.Collectors;
 
 public class FlightAdapter extends RecyclerView.Adapter<FlightAdapter.ViewHolder> {
 
-
-
     private final int numberOfBags;
     private final List<Flight> filteredFlights;
     private final String bookingDate;
+    private LayoutInflater layoutInflater;
+    private static final String TAG = "FlightAdapter";
 
     public FlightAdapter(Map<String, List<Flight>> flightSchedules, String bookingDate,
                          FlightPreference flightPreference) {
@@ -134,46 +134,29 @@ public class FlightAdapter extends RecyclerView.Adapter<FlightAdapter.ViewHolder
     @NonNull
     @Override
     public FlightAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        CardView cardView = (CardView) LayoutInflater.from(parent.getContext()).
-                inflate(R.layout.flight_selection,parent,false);
-        return new ViewHolder(cardView);
+
+        if(layoutInflater == null){
+            layoutInflater = LayoutInflater.from(parent.getContext());
+        }
+        FlightSelectionBinding flightSelectionBinding =
+                DataBindingUtil.inflate(layoutInflater,R.layout.flight_selection,parent,false);
+        return new ViewHolder(flightSelectionBinding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull FlightAdapter.ViewHolder holder, int position) {
 
-        CardView cardViewHolder = holder.cardView;
-
-        TextView airlineNameTextView = cardViewHolder.findViewById(R.id.airlineName_textView);
-        TextView airlineFlightNumberTextView = cardViewHolder.findViewById(R.id.airlineFN_textview);
-        TextView airlineFlightStatusTextView = cardViewHolder.findViewById(R.id.flightStatus_textView_b);
-        TextView originTextView = cardViewHolder.findViewById(R.id.airlineFrom_textView_b);
-        TextView destinationTextView = cardViewHolder.findViewById(R.id.airlineTo_textView_b);
-        TextView originTimeTextView = cardViewHolder.findViewById(R.id.airlineFromTime_textView);
-        TextView destinationTimeTextView = cardViewHolder.findViewById(R.id.airlineToTime_textView);
-        TextView airlineSeatsAvailable = cardViewHolder.findViewById(R.id.airlineSeat_textView_b);
-        TextView airlineTicketPrice = cardViewHolder.findViewById(R.id.airlinePrice_textView_b);
-
+        CardView cardView = holder.flightSelectionBinding.flightSelectionCardView;
         List<Double> ticketPrices = flightTicketPrices();
+        holder.bindFlightsAndPrice(filteredFlights.get(position),ticketPrices.get(position));
 
-        airlineNameTextView.setText(filteredFlights.get(position).getAirlineName());
-        airlineFlightNumberTextView.setText(filteredFlights.get(position).getFlightNumber());
-        airlineFlightStatusTextView.setText(filteredFlights.get(position).getStatus());
-        originTextView.setText(filteredFlights.get(position).getDeparture().getAirportName());
-        destinationTextView.setText(filteredFlights.get(position).getArrival().getAirportName());
-        originTimeTextView.setText(filteredFlights.get(position).getDeparture().getTimeOfDeparture());
-        destinationTimeTextView.setText(filteredFlights.get(position).getArrival().getTimeOfArrival());
-        airlineSeatsAvailable.setText(String.format(Locale.ENGLISH," %d",
-                filteredFlights.get(position).getSeatNumber()));
-        airlineTicketPrice.setText(String.format(Locale.ENGLISH,
-                "R %.2f",ticketPrices.get(position)));
-
-        cardViewHolder.setOnClickListener(view -> {
+        cardView.setOnClickListener(view -> {
             Bundle bundle = new Bundle();
             bundle.putSerializable(Constants.SERIALIZABLE_FLIGHT,
                     filteredFlights.get(holder.getBindingAdapterPosition()));
-            cardViewHolder.getContext()
-                    .startActivity(new Intent(cardViewHolder.getContext(), ItineraryActivity.class)
+
+            cardView.getContext()
+                    .startActivity(new Intent(cardView.getContext(), ItineraryActivity.class)
                             .putExtra(Constants.BOOKING_DATE,bookingDate)
                             .putExtra(Constants.TICKET_PRICE,flightTicketPrices()
                                     .get(holder.getBindingAdapterPosition()))
@@ -214,11 +197,17 @@ public class FlightAdapter extends RecyclerView.Adapter<FlightAdapter.ViewHolder
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        private final CardView cardView;
-        public ViewHolder(@NonNull CardView cardView) {
-            super(cardView);
+        private final FlightSelectionBinding flightSelectionBinding;
+        public ViewHolder(@NonNull FlightSelectionBinding flightSelectionBinding) {
+            super(flightSelectionBinding.getRoot());
 
-            this.cardView = cardView;
+            this.flightSelectionBinding = flightSelectionBinding;
+        }
+        public void bindFlightsAndPrice(Flight flight, double price){
+            flightSelectionBinding.setFlight(flight);
+            flightSelectionBinding.setPrice(price);
+
+            flightSelectionBinding.executePendingBindings();
         }
     }
 }

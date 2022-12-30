@@ -24,8 +24,8 @@ public class MainActivity extends FragmentActivity {
         com.atom.flightbookingapplication.databinding.ActivityMain1Binding
                 activityMain1Binding = ActivityMain1Binding.inflate(getLayoutInflater());
 
-
         setContentView(activityMain1Binding.getRoot());
+
         NavHostFragment navHostFragment =
                 (NavHostFragment) getSupportFragmentManager()
                         .findFragmentById(R.id.nav_host_container);

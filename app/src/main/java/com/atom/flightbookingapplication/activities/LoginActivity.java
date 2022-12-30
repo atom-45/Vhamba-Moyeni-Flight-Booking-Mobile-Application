@@ -18,6 +18,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.atom.flightbookingapplication.R;
+import com.atom.flightbookingapplication.databinding.ActivityLoginBinding;
 import com.atom.flightbookingapplication.models.Constants;
 import com.atom.flightbookingapplication.viewmodels.FirebaseAuthenticationViewModel;
 import com.google.android.material.textfield.TextInputEditText;
@@ -48,12 +49,13 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        ActivityLoginBinding loginBinding = ActivityLoginBinding.inflate(getLayoutInflater());
+        setContentView(loginBinding.getRoot());
 
         compositeDisposable = new CompositeDisposable();
-        TextInputEditText emailText = findViewById(R.id.login_email_edittext);
-        TextInputEditText passwordText = findViewById(R.id.login_password_edittext);
-        ProgressBar progressBar = findViewById(R.id.login_progressBar);
+        TextInputEditText emailText = loginBinding.loginEmailEdittext;
+        TextInputEditText passwordText = loginBinding.loginPasswordEdittext;
+        ProgressBar progressBar = loginBinding.loginProgressBar;
 
         FirebaseAuthenticationViewModel authenticationViewModel =
                 new ViewModelProvider(this,
@@ -61,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
                         .get(FirebaseAuthenticationViewModel.class);
 
 
-        findViewById(R.id.login_materialButton).setOnClickListener(
+       loginBinding.loginMaterialButton.setOnClickListener(
                 view -> {
                     Editable emailEditable = emailText.getText();
                     Editable passwordEditable = passwordText.getText();
@@ -85,17 +87,18 @@ public class LoginActivity extends AppCompatActivity {
                 }
         );
 
-        findViewById(R.id.create_account_textview).setOnClickListener(view -> {
+       loginBinding.createAccountTextview.setOnClickListener(view -> {
             startActivity(new Intent(this, RegistrationActivity.class));
             finish();
         });
 
-        findViewById(R.id.forget_password_textview).setOnClickListener(view -> {
+       loginBinding.forgetPasswordTextview.setOnClickListener(view -> {
             Editable emailEditable = emailText.getText();
             if((emailEditable!=null)&&(emailEditable.toString().matches(Constants.EMAIL_REGEX))){
-                if(authenticationViewModel.resetPasswordWithEmail(emailEditable.toString()))
-                Toast.makeText(this, "Email sent to your account",
-                        Toast.LENGTH_SHORT).show();
+                if(authenticationViewModel.resetPasswordWithEmail(emailEditable.toString())){
+                    Toast.makeText(this, "Email sent to your account",
+                            Toast.LENGTH_SHORT).show();
+                }
             } else {
                 Toast.makeText(this, "Email field is empty or incorrect email, " +
                         "therefore password cannot be reset", Toast.LENGTH_SHORT).show();

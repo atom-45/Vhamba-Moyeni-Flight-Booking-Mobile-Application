@@ -11,7 +11,8 @@ import android.widget.AutoCompleteTextView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.atom.flightbookingapplication.R;
+
+import com.atom.flightbookingapplication.databinding.ActivityFlightPreferenceBinding;
 import com.atom.flightbookingapplication.models.Card;
 import com.atom.flightbookingapplication.models.Constants;
 import com.atom.flightbookingapplication.models.FlightPreference;
@@ -31,11 +32,12 @@ public class FlightPreferenceActivity extends AppCompatActivity {
 
     private static final String TAG = "FlightPreferenceActivity";
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_flight_preference);
+        ActivityFlightPreferenceBinding activityFlightPreferenceBinding =
+                ActivityFlightPreferenceBinding.inflate(getLayoutInflater());
+        setContentView(activityFlightPreferenceBinding.getRoot());
 
         FirebaseRTDBViewModel rtdbViewModel = new ViewModelProvider(this,
                ViewModelProvider.Factory.from(FirebaseRTDBViewModel.initializer))
@@ -48,19 +50,19 @@ public class FlightPreferenceActivity extends AppCompatActivity {
         UserViewModel userViewModel = new ViewModelProvider(this)
                 .get(UserViewModel.class);
 
-        AutoCompleteTextView firstAirport = findViewById(R.id.first_airport_selection);
-        AutoCompleteTextView secondAirport = findViewById(R.id.second_airport_selection);
-        AutoCompleteTextView thirdAirport = findViewById(R.id.third_airport_selection);
-        AutoCompleteTextView seatSelection = findViewById(R.id.seat_selection);
-        AutoCompleteTextView foodSelection = findViewById(R.id.food_selection);
-        AutoCompleteTextView classSelection = findViewById(R.id.class_selection);
+        AutoCompleteTextView firstAirport = activityFlightPreferenceBinding.firstAirportSelection;
+        AutoCompleteTextView secondAirport = activityFlightPreferenceBinding.secondAirportSelection;
+        AutoCompleteTextView thirdAirport = activityFlightPreferenceBinding.thirdAirportSelection;
+        AutoCompleteTextView seatSelection = activityFlightPreferenceBinding.seatSelection;
+        AutoCompleteTextView foodSelection = activityFlightPreferenceBinding.foodSelection;
+        AutoCompleteTextView classSelection = activityFlightPreferenceBinding.classSelection;
 
-        TextInputEditText bagNumberEditText = findViewById(R.id.bagNumber_textInputEditText);
-        TextInputEditText cardNumberEditText = findViewById(R.id.cardNumber_textInputEditText);
-        TextInputEditText expiryDateEditText = findViewById(R.id.expiryDate_textInputEditText);
-        TextInputEditText cvvEditText = findViewById(R.id.cvv_textInputEditText);
+        TextInputEditText bagNumberEditText = activityFlightPreferenceBinding.bagNumberTextInputEditText;
+        TextInputEditText cardNumberEditText = activityFlightPreferenceBinding.cardNumberTextInputEditText;
+        TextInputEditText expiryDateEditText = activityFlightPreferenceBinding.expiryDateTextInputEditText;
+        TextInputEditText cvvEditText = activityFlightPreferenceBinding.cvvTextInputEditText;
 
-        ProgressBar progressBar = findViewById(R.id.flightPref_progressBar);
+        ProgressBar progressBar = activityFlightPreferenceBinding.flightPrefProgressBar;
 
         String email = getIntent().getStringExtra(Constants.EMAIL);
         String password = getIntent().getStringExtra(Constants.PASSWORD);
@@ -102,7 +104,7 @@ public class FlightPreferenceActivity extends AppCompatActivity {
         classSelection.setAdapter(classAdapter);
 
 
-        findViewById(R.id.proceed_materialButton).setOnClickListener(
+        activityFlightPreferenceBinding.proceedMaterialButton.setOnClickListener(
 
                 view -> {
 

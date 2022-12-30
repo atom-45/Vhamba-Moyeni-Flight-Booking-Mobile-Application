@@ -9,7 +9,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
 
-import com.atom.flightbookingapplication.R;
+import com.atom.flightbookingapplication.databinding.ActivityRegistrationBinding;
 import com.atom.flightbookingapplication.models.Constants;
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -21,17 +21,20 @@ public class RegistrationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
-        AutoCompleteTextView titleSpinner = findViewById(R.id.titles);
-        AutoCompleteTextView genderSpinner = findViewById(R.id.gender_selection);
-        TextInputEditText fullNameEditText = findViewById(R.id.fullName);
-        TextInputEditText surnameEditText = findViewById(R.id.surname);
-        TextInputEditText phoneNumberEditText = findViewById(R.id.phone_editText);
-        TextInputEditText passwordEditText = findViewById(R.id.password);
-        TextInputEditText emailEditText = findViewById(R.id.email_edittext);
-        TextInputEditText dayEditText = findViewById(R.id.day);
-        TextInputEditText monthEditText = findViewById(R.id.month);
-        TextInputEditText yearEditText = findViewById(R.id.year);
+        ActivityRegistrationBinding registrationBinding =
+                ActivityRegistrationBinding.inflate(getLayoutInflater());
+        setContentView(registrationBinding.getRoot());
+
+        AutoCompleteTextView titleSpinner = registrationBinding.titles;
+        AutoCompleteTextView genderSpinner = registrationBinding.genderSelection;
+        TextInputEditText fullNameEditText = registrationBinding.fullName;
+        TextInputEditText surnameEditText = registrationBinding.surname;
+        TextInputEditText phoneNumberEditText = registrationBinding.phoneEditText;
+        TextInputEditText passwordEditText = registrationBinding.password;
+        TextInputEditText emailEditText = registrationBinding.emailEdittext;
+        TextInputEditText dayEditText = registrationBinding.day;
+        TextInputEditText monthEditText = registrationBinding.month;
+        TextInputEditText yearEditText = registrationBinding.year;
 
 
 
@@ -44,22 +47,24 @@ public class RegistrationActivity extends AppCompatActivity {
                 com.google.android.material.R.layout.support_simple_spinner_dropdown_item,
                 Constants.genders());
 
+        assert titleSpinner != null;
+        assert genderSpinner != null;
         titleSpinner.setAdapter(titleArrayAdapter);
         genderSpinner.setAdapter(genderArrayAdapter);
 
 
-        findViewById(R.id.next_materialButton).setOnClickListener(view -> {
+        registrationBinding.nextMaterialButton.setOnClickListener(view -> {
             Intent registrationIntent = new Intent(this,FlightPreferenceActivity.class);
-            String fullName = "";
-            String surname = "";
-            String phoneNumber = "";
-            String email = "";
-            String password = "";
-            String day = "";
-            String month = "";
-            String year = "";
-            String title = "";
-            String gender = "";
+            String fullName;
+            String surname;
+            String phoneNumber;
+            String email;
+            String password;
+            String day;
+            String month;
+            String year;
+            String title;
+            String gender;
 
             if((yearEditText.getText()!=null)
                     && (monthEditText.getText()!=null)

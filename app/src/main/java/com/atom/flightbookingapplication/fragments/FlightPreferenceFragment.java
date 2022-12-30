@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.atom.flightbookingapplication.R;
 import com.atom.flightbookingapplication.activities.EditFlightPreferenceActivity;
+import com.atom.flightbookingapplication.databinding.FragmentEditFlightPreferenceBinding;
 import com.atom.flightbookingapplication.models.Card;
 import com.atom.flightbookingapplication.models.FlightPreference;
 import com.atom.flightbookingapplication.models.User;
@@ -44,6 +45,7 @@ public class FlightPreferenceFragment extends Fragment {
 
     private UserViewModel userViewModel;
     private CompositeDisposable compositeDisposable;
+    private FragmentEditFlightPreferenceBinding flightPreferenceBinding;
 
 
     public FlightPreferenceFragment() {
@@ -81,14 +83,15 @@ public class FlightPreferenceFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_edit_flight_preference, container, false);
+        flightPreferenceBinding = FragmentEditFlightPreferenceBinding.inflate(inflater,container,false);
+        return flightPreferenceBinding.getRoot(); //inflater.inflate(R.layout.fragment_edit_flight_preference, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         compositeDisposable = new CompositeDisposable();
-        view.findViewById(R.id.edit_materialButton1).setOnClickListener(view1 -> {
+        flightPreferenceBinding.editMaterialButton1.setOnClickListener(view1 -> {
 
             assert getParentFragment() != null;
             getParentFragment().startActivity(new Intent(view1.getContext(),
@@ -100,16 +103,16 @@ public class FlightPreferenceFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
-        View view = requireView();
+        //View view = requireView();
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
-        TextView commonAirportsTextView = view.findViewById(R.id.common_flights_textview2);
+       /* TextView commonAirportsTextView = view.findViewById(R.id.common_flights_textview2);
         TextView numberOfBagsTextView = view.findViewById(R.id.numberOfBags_textview2);
         TextView seatPositionTextView = view.findViewById(R.id.seat_textview2);
         TextView classTextView = view.findViewById(R.id.class_textview2);
         TextView foodOptionTextView = view.findViewById(R.id.food_textview2);
         TextView cardNumberTextView = view.findViewById(R.id.card_number_textview2);
         TextView cvvTextView = view.findViewById(R.id.cvv_textview2);
-        TextView expiryDateTextView = view.findViewById(R.id.expiryDate_textview2);
+        TextView expiryDateTextView = view.findViewById(R.id.expiryDate_textview2); **/
 
         @SuppressLint("DefaultLocale") Disposable userDisposable = userViewModel.getAllUsers()
                 .subscribeOn(Schedulers.io())
@@ -121,14 +124,14 @@ public class FlightPreferenceFragment extends Fragment {
                             + userFlightPreference.getSecond_airport()+"\n3. "
                             + userFlightPreference.getThird_airport();
 
-                    commonAirportsTextView.setText(commonAirports);
-                    numberOfBagsTextView.setText(userFlightPreference.getNumber_of_bags());
-                    seatPositionTextView.setText(userFlightPreference.getSeat_position());
-                    classTextView.setText(userFlightPreference.getAirplane_class());
-                    foodOptionTextView.setText(userFlightPreference.getFood_option());
-                    cardNumberTextView.setText(userCard.getCardNumber());
-                    cvvTextView.setText(String.format("%d",userCard.getCvv()));
-                    expiryDateTextView.setText(userCard.getExpiryDate());
+                    flightPreferenceBinding.commonFlightsTextview2.setText(commonAirports);
+                    flightPreferenceBinding.numberOfBagsTextview2.setText(userFlightPreference.getNumber_of_bags());
+                    flightPreferenceBinding.seatTextview2.setText(userFlightPreference.getSeat_position());
+                    flightPreferenceBinding.classTextview2.setText(userFlightPreference.getAirplane_class());
+                    flightPreferenceBinding.foodTextview2.setText(userFlightPreference.getFood_option());
+                    flightPreferenceBinding.cardNumberTextview2.setText(userCard.getCardNumber());
+                    flightPreferenceBinding.cvvTextview2.setText(String.format("%d",userCard.getCvv()));
+                    flightPreferenceBinding.expiryDateTextview2.setText(userCard.getExpiryDate());
 
                 })
                 .observeOn(AndroidSchedulers.mainThread())

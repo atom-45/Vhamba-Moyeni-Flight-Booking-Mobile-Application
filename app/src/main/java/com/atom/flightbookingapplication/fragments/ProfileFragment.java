@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.atom.flightbookingapplication.R;
 import com.atom.flightbookingapplication.activities.EditProfileActivity;
+import com.atom.flightbookingapplication.databinding.FragmentProfileBinding;
 import com.atom.flightbookingapplication.models.User;
 import com.atom.flightbookingapplication.viewmodels.FirebaseAuthenticationViewModel;
 import com.atom.flightbookingapplication.viewmodels.UserViewModel;
@@ -43,10 +44,11 @@ public class ProfileFragment extends Fragment {
 
     private UserViewModel userViewModel;
     private final CompositeDisposable compositeDisposable = new CompositeDisposable();
+    private FragmentProfileBinding profileBinding;
     private static final String TAG = "ProfileFragment";
 
 
-    FirebaseAuthenticationViewModel authenticationViewModel;
+    private FirebaseAuthenticationViewModel authenticationViewModel;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -80,21 +82,22 @@ public class ProfileFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        profileBinding = FragmentProfileBinding.inflate(inflater, container, false);
+        return  profileBinding.getRoot();//inflater.inflate(R.layout.fragment_profile, container, false);
     }
 
     @Override
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState){
 
-        view.findViewById(R.id.edit_materialButton2).setOnClickListener(view1 -> {
+        profileBinding.editMaterialButton2.setOnClickListener(view1 -> {
             assert getParentFragment() != null;
             getParentFragment().startActivity(new Intent(view1.getContext(),
                     EditProfileActivity.class));
         });
-        view.findViewById(R.id.delete_materialButton).setOnClickListener(view12 -> {
+        profileBinding.deleteMaterialButton.setOnClickListener(view12 -> {
             authenticationViewModel.deleteUserAccount(getParentFragment(),userViewModel);
             assert getParentFragment() != null;
             getParentFragment().requireActivity().finish();
@@ -104,7 +107,7 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        View view = requireView();
+        //View view = requireView();
 
         userViewModel = new ViewModelProvider(this)
                 .get(UserViewModel.class);
@@ -113,26 +116,26 @@ public class ProfileFragment extends Fragment {
                 ViewModelProvider.Factory.from(FirebaseAuthenticationViewModel.initializer))
                 .get(FirebaseAuthenticationViewModel.class);
 
-        TextView fullNameTextView = view.findViewById(R.id.fullname_textview4);
-        TextView surnameTextView = view.findViewById(R.id.surname_textview4);
-        TextView phoneNumberTextView = view.findViewById(R.id.phone_number_textview4);
-        TextView emailTextView = view.findViewById(R.id.email_textview4);
-        TextView dobTextView = view.findViewById(R.id.dob_textview4);
-        TextView title = view.findViewById(R.id.title_textview4);
-        TextView gender = view.findViewById(R.id.gender_textview4);
+        /** TextView fullNameTextView = profileBinding.fullnameTextview4;//view.findViewById(R.id.fullname_textview4);
+        TextView surnameTextView = profileBinding.surnameTextview4; //view.findViewById(R.id.surname_textview4);
+        TextView phoneNumberTextView = profileBinding.phoneNumberTextview4;//view.findViewById(R.id.phone_number_textview4);
+        TextView emailTextView = profileBinding.emailTextview4;//view.findViewById(R.id.email_textview4);
+        TextView dobTextView = profileBinding.dobTextview4;//view.findViewById(R.id.dob_textview4);
+        TextView title = profileBinding.titleTextview4;//view.findViewById(R.id.title_textview4);
+        TextView gender = profileBinding.genderTextview4;//view.findViewById(R.id.gender_textview4);**/
 
         Disposable disposable = userViewModel.getAllUsers()
                 .subscribeOn(Schedulers.io())
                 .doOnNext(users -> {
                     if(users.size()!=0){
                         User user = users.get(users.size()-1);
-                        fullNameTextView.setText(user.getName());
-                        surnameTextView.setText(user.getSurname());
-                        phoneNumberTextView.setText(user.getPhoneNumbers());
-                        emailTextView.setText(user.getEmail());
-                        dobTextView.setText(user.getDateOfBirth());
-                        title.setText(user.getTitle());
-                        gender.setText(user.getGender());
+                        profileBinding.fullnameTextview4.setText(user.getName());
+                        profileBinding.surnameTextview4.setText(user.getSurname());
+                        profileBinding.phoneNumberTextview4.setText(user.getPhoneNumbers());
+                        profileBinding.emailTextview4.setText(user.getEmail());
+                        profileBinding.dobTextview4.setText(user.getDateOfBirth());
+                        profileBinding.titleTextview4.setText(user.getTitle());
+                        profileBinding.genderTextview4.setText(user.getGender());
                     } else {
                         Log.e(TAG, "onStart:  empty list. No recorded user data " +
                                 "in Room database");

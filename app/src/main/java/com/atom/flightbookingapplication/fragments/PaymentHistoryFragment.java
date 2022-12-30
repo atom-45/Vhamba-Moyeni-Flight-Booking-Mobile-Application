@@ -3,6 +3,7 @@ package com.atom.flightbookingapplication.fragments;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.atom.flightbookingapplication.R;
+import com.atom.flightbookingapplication.databinding.FragmentPaymentHistoryBinding;
 import com.atom.flightbookingapplication.models.User;
 import com.atom.flightbookingapplication.viewmodels.FirebaseRTDBViewModel;
 import com.atom.flightbookingapplication.viewmodels.UserViewModel;
@@ -43,6 +45,7 @@ public class PaymentHistoryFragment extends Fragment {
     private String mParam2;
 
     private CompositeDisposable compositeDisposable;
+    private FragmentPaymentHistoryBinding fragmentPaymentHistoryBinding;
 
 
 
@@ -78,11 +81,14 @@ public class PaymentHistoryFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        return inflater.inflate(R.layout.fragment_payment_history, container, false);
+        fragmentPaymentHistoryBinding = FragmentPaymentHistoryBinding
+                .inflate(inflater, container, false);
+        return fragmentPaymentHistoryBinding.getRoot();
+        //return inflater.inflate(R.layout.fragment_payment_history, container, false);
     }
 
     @Override
@@ -103,7 +109,8 @@ public class PaymentHistoryFragment extends Fragment {
         UserViewModel userViewModel = new ViewModelProvider(this)
                 .get(UserViewModel.class);
 
-        RecyclerView recyclerView = view.findViewById(R.id.payment_history_recyclerview);
+        RecyclerView recyclerView = fragmentPaymentHistoryBinding.paymentHistoryRecyclerview;
+        //view.findViewById(R.id.payment_history_recyclerview);
 
         Disposable disposable = userViewModel.getAllUsers()
                 .subscribeOn(Schedulers.io())

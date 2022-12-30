@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
-import com.atom.flightbookingapplication.R;
+import com.atom.flightbookingapplication.databinding.ActivityFlightPreferenceBinding;
 import com.atom.flightbookingapplication.models.Card;
 import com.atom.flightbookingapplication.models.Constants;
 import com.atom.flightbookingapplication.models.FlightPreference;
@@ -33,7 +33,9 @@ public class EditFlightPreferenceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_flight_preference);
+        ActivityFlightPreferenceBinding flightPreferenceBinding =
+                ActivityFlightPreferenceBinding.inflate(getLayoutInflater());
+        setContentView(flightPreferenceBinding.getRoot());
 
         FirebaseRTDBViewModel rtdbViewModel = new ViewModelProvider(this,
                 ViewModelProvider.Factory
@@ -46,17 +48,17 @@ public class EditFlightPreferenceActivity extends AppCompatActivity {
         compositeDisposable = new CompositeDisposable();
 
 
-        AutoCompleteTextView firstAirport = findViewById(R.id.first_airport_selection);
-        AutoCompleteTextView secondAirport = findViewById(R.id.second_airport_selection);
-        AutoCompleteTextView thirdAirport = findViewById(R.id.third_airport_selection);
-        AutoCompleteTextView seatSelection = findViewById(R.id.seat_selection);
-        AutoCompleteTextView foodSelection = findViewById(R.id.food_selection);
-        AutoCompleteTextView classSelection = findViewById(R.id.class_selection);
+        AutoCompleteTextView firstAirport = flightPreferenceBinding.firstAirportSelection;
+        AutoCompleteTextView secondAirport = flightPreferenceBinding.secondAirportSelection;
+        AutoCompleteTextView thirdAirport = flightPreferenceBinding.thirdAirportSelection;
+        AutoCompleteTextView seatSelection = flightPreferenceBinding.seatSelection;
+        AutoCompleteTextView foodSelection = flightPreferenceBinding.foodSelection;
+        AutoCompleteTextView classSelection = flightPreferenceBinding.classSelection;
 
-        TextInputEditText bagNumberEditText = findViewById(R.id.bagNumber_textInputEditText);
-        TextInputEditText cardNumberEditText = findViewById(R.id.cardNumber_textInputEditText);
-        TextInputEditText expiryDateEditText = findViewById(R.id.expiryDate_textInputEditText);
-        TextInputEditText cvvEditText = findViewById(R.id.cvv_textInputEditText);
+        TextInputEditText bagNumberEditText = flightPreferenceBinding.bagNumberTextInputEditText;
+        TextInputEditText cardNumberEditText = flightPreferenceBinding.cardNumberTextInputEditText;
+        TextInputEditText expiryDateEditText = flightPreferenceBinding.expiryDateTextInputEditText;
+        TextInputEditText cvvEditText = flightPreferenceBinding.cvvTextInputEditText;
 
         ArrayAdapter<String> firstAdapter = new ArrayAdapter<>(getApplicationContext(),
                 com.google.android.material.R.layout.support_simple_spinner_dropdown_item,
@@ -84,7 +86,7 @@ public class EditFlightPreferenceActivity extends AppCompatActivity {
         foodSelection.setAdapter(foodAdapter);
         classSelection.setAdapter(classAdapter);
 
-        findViewById(R.id.proceed_materialButton).setOnClickListener(view -> {
+        flightPreferenceBinding.proceedMaterialButton.setOnClickListener(view -> {
 
             String firstAirportEditable = firstAirport.getText().toString();
             String secondAirportEditable = secondAirport.getText().toString();
