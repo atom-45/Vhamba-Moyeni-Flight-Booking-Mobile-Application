@@ -88,7 +88,6 @@ public class PaymentHistoryFragment extends Fragment {
         fragmentPaymentHistoryBinding = FragmentPaymentHistoryBinding
                 .inflate(inflater, container, false);
         return fragmentPaymentHistoryBinding.getRoot();
-        //return inflater.inflate(R.layout.fragment_payment_history, container, false);
     }
 
     @Override
@@ -110,7 +109,6 @@ public class PaymentHistoryFragment extends Fragment {
                 .get(UserViewModel.class);
 
         RecyclerView recyclerView = fragmentPaymentHistoryBinding.paymentHistoryRecyclerview;
-        //view.findViewById(R.id.payment_history_recyclerview);
 
         Disposable disposable = userViewModel.getAllUsers()
                 .subscribeOn(Schedulers.io())

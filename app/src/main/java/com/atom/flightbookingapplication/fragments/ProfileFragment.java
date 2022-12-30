@@ -86,7 +86,7 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         profileBinding = FragmentProfileBinding.inflate(inflater, container, false);
-        return  profileBinding.getRoot();//inflater.inflate(R.layout.fragment_profile, container, false);
+        return  profileBinding.getRoot();
     }
 
     @Override
@@ -107,7 +107,6 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        //View view = requireView();
 
         userViewModel = new ViewModelProvider(this)
                 .get(UserViewModel.class);
@@ -116,13 +115,6 @@ public class ProfileFragment extends Fragment {
                 ViewModelProvider.Factory.from(FirebaseAuthenticationViewModel.initializer))
                 .get(FirebaseAuthenticationViewModel.class);
 
-        /** TextView fullNameTextView = profileBinding.fullnameTextview4;//view.findViewById(R.id.fullname_textview4);
-        TextView surnameTextView = profileBinding.surnameTextview4; //view.findViewById(R.id.surname_textview4);
-        TextView phoneNumberTextView = profileBinding.phoneNumberTextview4;//view.findViewById(R.id.phone_number_textview4);
-        TextView emailTextView = profileBinding.emailTextview4;//view.findViewById(R.id.email_textview4);
-        TextView dobTextView = profileBinding.dobTextview4;//view.findViewById(R.id.dob_textview4);
-        TextView title = profileBinding.titleTextview4;//view.findViewById(R.id.title_textview4);
-        TextView gender = profileBinding.genderTextview4;//view.findViewById(R.id.gender_textview4);**/
 
         Disposable disposable = userViewModel.getAllUsers()
                 .subscribeOn(Schedulers.io())

@@ -84,7 +84,7 @@ public class FlightPreferenceFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         flightPreferenceBinding = FragmentEditFlightPreferenceBinding.inflate(inflater,container,false);
-        return flightPreferenceBinding.getRoot(); //inflater.inflate(R.layout.fragment_edit_flight_preference, container, false);
+        return flightPreferenceBinding.getRoot();
     }
 
     @Override
@@ -103,16 +103,7 @@ public class FlightPreferenceFragment extends Fragment {
     public void onStart() {
         super.onStart();
 
-        //View view = requireView();
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
-       /* TextView commonAirportsTextView = view.findViewById(R.id.common_flights_textview2);
-        TextView numberOfBagsTextView = view.findViewById(R.id.numberOfBags_textview2);
-        TextView seatPositionTextView = view.findViewById(R.id.seat_textview2);
-        TextView classTextView = view.findViewById(R.id.class_textview2);
-        TextView foodOptionTextView = view.findViewById(R.id.food_textview2);
-        TextView cardNumberTextView = view.findViewById(R.id.card_number_textview2);
-        TextView cvvTextView = view.findViewById(R.id.cvv_textview2);
-        TextView expiryDateTextView = view.findViewById(R.id.expiryDate_textview2); **/
 
         @SuppressLint("DefaultLocale") Disposable userDisposable = userViewModel.getAllUsers()
                 .subscribeOn(Schedulers.io())

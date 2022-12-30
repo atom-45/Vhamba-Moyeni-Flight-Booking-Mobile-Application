@@ -92,7 +92,7 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         homeBinding = FragmentHomeBinding.inflate(inflater, container, false);
 
-        return homeBinding.getRoot(); //inflater.inflate(R.layout.fragment_home, container, false);
+        return homeBinding.getRoot();
     }
 
     @Override
@@ -150,12 +150,12 @@ public class HomeFragment extends Fragment {
         UserViewModel userViewModel = new ViewModelProvider(this)
                 .get(UserViewModel.class);
 
-        TextView currentFlight = homeBinding.flightNumberAndAirlineMaTextView;//view.findViewById(R.id.flightNumberAndAirline_ma_textView);
-        TextView currentDateTextView = homeBinding.datetimeTextviewB;//view.findViewById(R.id.datetime_textview_b);
-        TextView currentTimeTextView = homeBinding.timemaTextviewA;//view.findViewById(R.id.timema_textview_a);
-        TextView currentFromTextView = homeBinding.fromAirportTextview;//view.findViewById(R.id.from_airport_textview);
-        TextView currentToTextView = homeBinding.toAirportTextview;//view.findViewById(R.id.to_airport_textview);
-        ImageView checkInImageView = homeBinding.checkInImageView;//view.findViewById(R.id.checkIn_imageView);
+        TextView currentFlight = homeBinding.flightNumberAndAirlineMaTextView;
+        TextView currentDateTextView = homeBinding.datetimeTextviewB;
+        TextView currentTimeTextView = homeBinding.timemaTextviewA;
+        TextView currentFromTextView = homeBinding.fromAirportTextview;
+        TextView currentToTextView = homeBinding.toAirportTextview;
+        ImageView checkInImageView = homeBinding.checkInImageView;
 
         Disposable disposable = userViewModel.getAllUsers()
                 .subscribeOn(Schedulers.io())
