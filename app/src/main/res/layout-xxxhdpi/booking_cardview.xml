@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="ticket"
+            type="com.atom.flightbookingapplication.models.Ticket" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/booking_cardView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_margin="10dp"
+        android:clickable="true"
+        app:cardBackgroundColor="@color/light_purple"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="6dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/payment_flightnumber"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:autoSizeMaxTextSize="15sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="start|center"
+                android:textColor="@color/black"
+                android:text="@{ticket.flightNumber}"
+                app:layout_constraintEnd_toEndOf="@+id/payment_airline"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/payment_airline"
+                app:layout_constraintTop_toBottomOf="@+id/payment_airline" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/ticket_materialDivider"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="84dp"
+                app:dividerColor="@color/yellow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/payment_airline"
+                android:layout_width="150dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="16dp"
+                android:autoSizeMaxTextSize="16sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="start|center"
+                android:text="@{ticket.airline}"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/reference_textview_a" />
+
+            <TextView
+                android:id="@+id/payment_flightDate_1"
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="16dp"
+                android:autoSizeMaxTextSize="14sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="start|center"
+                android:text="@string/flight_date"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/payment_flightDate_2" />
+
+            <TextView
+                android:id="@+id/payment_flightDate_2"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:autoSizeMaxTextSize="18sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:text="@{ticket.flightDate}"
+                android:textColor="@color/light_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/payment_flightDate_1"
+                app:layout_constraintTop_toBottomOf="@+id/reference_textview_b" />
+
+            <TextView
+                android:id="@+id/payment_flightFrom_1"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:autoSizeMaxTextSize="14sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="start|center"
+                android:text="@string/from"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/payment_flightDate_1"
+                app:layout_constraintStart_toStartOf="@+id/payment_flightDate_1"
+                app:layout_constraintTop_toBottomOf="@+id/payment_flightDate_1" />
+
+
+            <TextView
+                android:id="@+id/payment_flightFrom_2"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:autoSizeMaxTextSize="16sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:text="@{ticket.departure.airportName}"
+                app:layout_constraintEnd_toEndOf="@+id/payment_flightDate_2"
+                app:layout_constraintStart_toStartOf="@+id/payment_flightDate_2"
+                app:layout_constraintTop_toBottomOf="@+id/payment_flightDate_2" />
+
+            <TextView
+                android:id="@+id/payment_flightTo_1"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:autoSizeMaxTextSize="14sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="start|center"
+                android:text="@string/to"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/payment_flightFrom_1"
+                app:layout_constraintStart_toStartOf="@+id/payment_flightFrom_1"
+                app:layout_constraintTop_toBottomOf="@+id/payment_flightFrom_1" />
+
+
+            <TextView
+                android:id="@+id/payment_flightTo_2"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:autoSizeMaxTextSize="16sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:text="@{ticket.arrival.airportName}"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/payment_flightFrom_2"
+                app:layout_constraintStart_toStartOf="@+id/payment_flightFrom_2"
+                app:layout_constraintTop_toBottomOf="@+id/payment_flightFrom_2" />
+
+
+            <TextView
+                android:id="@+id/payment_flightClass_1"
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:autoSizeMaxTextSize="14sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="start|center"
+                android:text="@string/airline_class"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/payment_flightTo_1"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/payment_flightTo_1"
+                app:layout_constraintTop_toBottomOf="@+id/payment_flightTo_1" />
+
+            <TextView
+                android:id="@+id/payment_flightClass_2"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:autoSizeMaxTextSize="15sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:text="@{ticket.flightPreference.airplane_class}"
+                app:layout_constraintEnd_toEndOf="@+id/payment_flightTo_2"
+                app:layout_constraintStart_toStartOf="@+id/payment_flightTo_2"
+                app:layout_constraintTop_toBottomOf="@+id/payment_flightTo_2" />
+
+            <TextView
+                android:id="@+id/payment_flightDuration"
+                android:layout_width="100dp"
+                android:layout_height="35dp"
+                android:autoSizeMaxTextSize="18sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="start|center"
+                android:text="@string/time_and_duration"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/payment_flightClass_1"
+                app:layout_constraintStart_toStartOf="@+id/payment_flightClass_1"
+                app:layout_constraintTop_toBottomOf="@+id/payment_flightClass_1" />
+
+            <TextView
+                android:id="@+id/payment_flightDuration_2"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:autoSizeMaxTextSize="15sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:textColor="@color/black"
+                app:departureTime="@{ticket.departure.timeOfDeparture}"
+                app:arrivalTime="@{ticket.arrival.timeOfArrival}"
+                app:layout_constraintEnd_toEndOf="@+id/payment_flightClass_2"
+                app:layout_constraintStart_toStartOf="@+id/payment_flightClass_2"
+                app:layout_constraintTop_toBottomOf="@+id/payment_flightClass_2" />
+
+            <TextView
+                android:id="@+id/payment_flightTicketPrice_1"
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="33dp"
+                android:autoSizeMaxTextSize="14sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="start|center"
+                android:text="@string/ticket_price"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="@+id/payment_flightTicketPrice_2"
+                app:layout_constraintEnd_toEndOf="@+id/payment_flightDuration"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/payment_flightDuration"
+                app:layout_constraintTop_toBottomOf="@+id/payment_flightDuration"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/payment_flightTicketPrice_2"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="12dp"
+                android:autoSizeMaxTextSize="15sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:text='@{"R "+String.format("%.2f",ticket.ticketPrice)}'
+                app:layout_constraintEnd_toEndOf="@+id/payment_flightDuration_2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/payment_flightDuration_2"
+                app:layout_constraintTop_toBottomOf="@+id/payment_flightDuration_2" />
+
+            <TextView
+                android:id="@+id/reference_textview_a"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="16dp"
+                android:autoSizeMaxTextSize="15sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:text="@string/booking_reference"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/reference_textview_b"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:autoSizeMaxTextSize="15sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:text="@{ticket.bookingReference}"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/reference_textview_a"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/reference_textview_a"
+                app:layout_constraintTop_toBottomOf="@+id/reference_textview_a" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

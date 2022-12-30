@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
-import com.atom.flightbookingapplication.R;
+import com.atom.flightbookingapplication.databinding.ActivityRegistrationBinding;
 import com.atom.flightbookingapplication.models.Constants;
 import com.atom.flightbookingapplication.models.User;
 import com.atom.flightbookingapplication.viewmodels.FirebaseAuthenticationViewModel;
@@ -28,7 +28,9 @@ public class EditProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
+        ActivityRegistrationBinding registrationBinding =
+                ActivityRegistrationBinding.inflate(getLayoutInflater());
+        setContentView(registrationBinding.getRoot());
 
         FirebaseRTDBViewModel rtdbViewModel = new ViewModelProvider(this,
                 ViewModelProvider.Factory
@@ -42,16 +44,16 @@ public class EditProfileActivity extends AppCompatActivity {
         userViewModel = new ViewModelProvider(this)
                 .get(UserViewModel.class);
 
-        AutoCompleteTextView titleSpinner = findViewById(R.id.titles);
-        AutoCompleteTextView genderSpinner = findViewById(R.id.gender_selection);
-        TextInputEditText fullNameEditText = findViewById(R.id.fullName);
-        TextInputEditText surnameEditText = findViewById(R.id.surname);
-        TextInputEditText phoneNumberEditText = findViewById(R.id.phone_editText);
-        TextInputEditText passwordEditText = findViewById(R.id.password);
-        TextInputEditText emailEditText = findViewById(R.id.email_edittext);
-        TextInputEditText dayEditText = findViewById(R.id.day);
-        TextInputEditText monthEditText = findViewById(R.id.month);
-        TextInputEditText yearEditText = findViewById(R.id.year);
+        AutoCompleteTextView titleSpinner = registrationBinding.titles;
+        AutoCompleteTextView genderSpinner = registrationBinding.genderSelection;
+        TextInputEditText fullNameEditText = registrationBinding.fullName;
+        TextInputEditText surnameEditText = registrationBinding.surname;
+        TextInputEditText phoneNumberEditText = registrationBinding.phoneEditText;
+        TextInputEditText passwordEditText = registrationBinding.password;
+        TextInputEditText emailEditText = registrationBinding.emailEdittext;
+        TextInputEditText dayEditText = registrationBinding.day;
+        TextInputEditText monthEditText = registrationBinding.month;
+        TextInputEditText yearEditText = registrationBinding.year;
 
 
 
@@ -64,13 +66,15 @@ public class EditProfileActivity extends AppCompatActivity {
                 com.google.android.material.R.layout.support_simple_spinner_dropdown_item,
                 Constants.genders());
 
+        assert titleSpinner != null;
+        assert genderSpinner != null;
         titleSpinner.setAdapter(titleArrayAdapter);
         genderSpinner.setAdapter(genderArrayAdapter);
 
         Toast.makeText(this, "Note: You cannot update or change " +
                 "your current password at this point in time", Toast.LENGTH_SHORT).show();
 
-        findViewById(R.id.next_materialButton).setOnClickListener(view -> {
+        registrationBinding.nextMaterialButton.setOnClickListener(view -> {
 
             String fullName;
             String surname;

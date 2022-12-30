@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/oneway_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/light_purple"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/oneway_flight_date"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:paddingStart="2dp"
+                android:text="@string/example_date"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.566"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="RtlSymmetry" />
+
+            <ImageView
+                android:id="@+id/flight_date_imageview"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/calendar"
+                app:layout_constraintBottom_toBottomOf="@+id/oneway_flight_date"
+                app:layout_constraintEnd_toStartOf="@+id/oneway_flight_date"
+                app:layout_constraintTop_toTopOf="@+id/oneway_flight_date"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/flight_number_textview"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:gravity="center"
+                android:hint="Kulula MN102"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/oneway_flight_date"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/flight_date_imageview"
+                app:layout_constraintTop_toBottomOf="@+id/oneway_flight_date" />
+
+            <ImageView
+                android:id="@+id/airplane_direction_imageview"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="24dp"
+                android:padding="5dp"
+                android:src="@drawable/airplane_a"
+                app:layout_constraintEnd_toEndOf="@+id/material_divider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/flight_number_textview"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/departure_imageview"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="16dp"
+                android:padding="1dp"
+                android:src="@drawable/departure"
+                app:layout_constraintEnd_toEndOf="@+id/airport_from_tv"
+                app:layout_constraintHorizontal_bias="0.294"
+                app:layout_constraintStart_toStartOf="@+id/airport_from_tv"
+                app:layout_constraintTop_toBottomOf="@+id/airport_from_tv"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/departure_date_one"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="12dp"
+                android:autoSizeMaxTextSize="24sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:padding="2dp"
+                android:text="@string/departure_time"
+                app:layout_constraintStart_toEndOf="@+id/from_textview"
+                app:layout_constraintTop_toBottomOf="@+id/departure_imageview" />
+
+            <TextView
+                android:id="@+id/from_textview"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:text="@string/from"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@+id/departure_imageview"
+                app:layout_constraintTop_toBottomOf="@+id/departure_imageview" />
+
+            <TextView
+                android:id="@+id/arrival_date_one"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="12dp"
+                android:autoSizeMaxTextSize="24sp"
+                android:autoSizeMinTextSize="12sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center|bottom"
+                android:padding="2dp"
+                android:text="@string/arrival_time"
+                app:layout_constraintEnd_toEndOf="@+id/arrival_imageview"
+                app:layout_constraintStart_toEndOf="@+id/to_textview"
+                app:layout_constraintTop_toBottomOf="@+id/arrival_imageview" />
+
+            <TextView
+                android:id="@+id/to_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:text="@string/to"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="@+id/arrival_imageview"
+                app:layout_constraintTop_toBottomOf="@+id/arrival_imageview" />
+
+            <TextView
+                android:id="@+id/airport_from_tv"
+                android:layout_width="135dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:autoSizeMaxTextSize="17sp"
+                android:autoSizeMinTextSize="9sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:text="@string/o_r_tambo"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/flight_number_textview" />
+
+            <TextView
+                android:id="@+id/airport_to_tv"
+                android:layout_width="135dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="16dp"
+                android:autoSizeMaxTextSize="17sp"
+                android:autoSizeMinTextSize="9sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:text="@string/cape_town_airport"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/airport_from_tv" />
+
+            <TextView
+                android:id="@+id/tof_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="22dp"
+                android:layout_marginTop="32dp"
+                android:autoSizeMaxTextSize="18sp"
+                android:autoSizeMinTextSize="8sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:padding="0dp"
+                android:text="Flight Duration: 2hrs"
+                android:textColor="@color/light_grey"
+                app:layout_constraintEnd_toStartOf="@+id/arrival_imageview"
+                app:layout_constraintHorizontal_bias="0.146"
+                app:layout_constraintStart_toEndOf="@+id/departure_imageview"
+                app:layout_constraintTop_toBottomOf="@+id/airplane_direction_imageview" />
+
+            <ImageView
+                android:id="@+id/arrival_imageview"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="12dp"
+                android:padding="1dp"
+                android:src="@drawable/arrival"
+                app:layout_constraintEnd_toEndOf="@+id/airport_to_tv"
+                app:layout_constraintHorizontal_bias="0.635"
+                app:layout_constraintStart_toStartOf="@+id/airport_to_tv"
+                app:layout_constraintTop_toBottomOf="@+id/airport_to_tv"
+                tools:ignore="ContentDescription" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/material_divider"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="64dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tof_textview" />
+
+            <TextView
+                android:id="@+id/travel_details_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/travel_details"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/material_divider"
+                app:layout_constraintHorizontal_bias="0.501"
+                app:layout_constraintStart_toStartOf="@+id/material_divider"
+                app:layout_constraintTop_toTopOf="@+id/material_divider" />
+
+            <TextView
+                android:id="@+id/fullname_textview1"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="25dp"
+                android:autoSizeMaxTextSize="24sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:text="@string/full_name_a"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/travel_details_textview" />
+
+            <TextView
+                android:id="@+id/seatnumber_textview1"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:autoSizeMaxTextSize="24sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:text="@string/seat_number"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/fullname_textview1"
+                app:layout_constraintTop_toBottomOf="@+id/fullname_textview1" />
+
+            <TextView
+                android:id="@+id/seatnumber_textview2"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:autoSizeMaxTextSize="24sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:text="@string/seat_number_example"
+                android:textColor="@color/light_grey"
+                app:layout_constraintBottom_toBottomOf="@+id/seatnumber_textview1"
+                app:layout_constraintEnd_toEndOf="@+id/fullname_textview2"
+                app:layout_constraintStart_toStartOf="@+id/fullname_textview2"
+                app:layout_constraintTop_toBottomOf="@+id/fullname_textview2" />
+
+            <TextView
+                android:id="@+id/checkedbags_textview1"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:autoSizeMaxTextSize="24sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:text="@string/checked_bags"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/seatnumber_textview1"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/seatnumber_textview1"
+                app:layout_constraintTop_toBottomOf="@+id/seatnumber_textview1" />
+
+            <TextView
+                android:id="@+id/checkedbags_textview2"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="12dp"
+                android:autoSizeMaxTextSize="24sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:text="@string/checkedbags_example"
+                android:textColor="@color/light_grey"
+                app:layout_constraintBottom_toBottomOf="@+id/checkedbags_textview1"
+                app:layout_constraintEnd_toEndOf="@+id/seatnumber_textview2"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/seatnumber_textview2"
+                app:layout_constraintTop_toBottomOf="@+id/seatnumber_textview2"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/plane_class_textview1"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:autoSizeMaxTextSize="24sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:text="@string/airline_class"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/checkedbags_textview1"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/checkedbags_textview1"
+                app:layout_constraintTop_toBottomOf="@+id/checkedbags_textview1" />
+
+            <TextView
+                android:id="@+id/plane_class_textview2"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:autoSizeMaxTextSize="24sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:text="@string/economy"
+                android:textColor="@color/light_grey"
+                app:layout_constraintBottom_toBottomOf="@+id/plane_class_textview1"
+                app:layout_constraintEnd_toEndOf="@+id/checkedbags_textview2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/checkedbags_textview2"
+                app:layout_constraintTop_toBottomOf="@+id/checkedbags_textview2" />
+
+
+            <TextView
+                android:id="@+id/fullname_textview2"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginEnd="25dp"
+                android:autoSizeMaxTextSize="24sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:text="@string/matome_modiba"
+                android:textColor="@color/light_grey"
+                app:layout_constraintBottom_toBottomOf="@+id/fullname_textview1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.913"
+                app:layout_constraintStart_toEndOf="@+id/fullname_textview1"
+                app:layout_constraintTop_toTopOf="@+id/fullname_textview1"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/total_ticketprice_textview1"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:autoSizeMaxTextSize="24sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:text="@string/ticket_price"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/plane_class_textview1"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/plane_class_textview1"
+                app:layout_constraintTop_toBottomOf="@+id/plane_class_textview1" />
+
+            <TextView
+                android:id="@+id/total_ticketprice_textview2"
+                android:layout_width="100dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="12dp"
+                android:autoSizeMaxTextSize="24sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:text="@string/ticket_price_example"
+                android:textColor="@color/light_grey"
+                app:layout_constraintBottom_toBottomOf="@+id/total_ticketprice_textview1"
+                app:layout_constraintEnd_toEndOf="@+id/plane_class_textview2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/plane_class_textview2"
+                app:layout_constraintTop_toBottomOf="@+id/plane_class_textview2"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/bookingReference_textview_a"
+                android:layout_width="120dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="40dp"
+                android:autoSizeMaxTextSize="24sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:text="@string/booking_reference"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/total_ticketprice_textview1"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/total_ticketprice_textview1" />
+
+            <TextView
+                android:id="@+id/bookingReference_textview_b"
+                android:layout_width="120dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="0dp"
+                android:autoSizeMaxTextSize="24sp"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:text="FNORCPT34V56"
+                android:textColor="@color/light_grey"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@+id/bookingReference_textview_a"
+                app:layout_constraintEnd_toEndOf="@+id/total_ticketprice_textview2"
+                app:layout_constraintTop_toBottomOf="@+id/total_ticketprice_textview2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

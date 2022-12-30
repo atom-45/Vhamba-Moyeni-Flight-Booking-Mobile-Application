@@ -10,7 +10,7 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.atom.flightbookingapplication.R;
+import com.atom.flightbookingapplication.databinding.ActivityAssistantBinding;
 import com.atom.flightbookingapplication.models.Constants;
 import com.atom.flightbookingapplication.models.Ticket;
 import com.atom.flightbookingapplication.models.User;
@@ -39,17 +39,18 @@ import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class AssistantActivity extends AppCompatActivity {
 
-
     private CompositeDisposable compositeDisposable;
     private final static String TAG = "AssistantActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_assistant);
+        ActivityAssistantBinding assistantBinding =
+                ActivityAssistantBinding.inflate(getLayoutInflater());
+        setContentView(assistantBinding.getRoot());
 
-        TextInputEditText customerServiceEditText = findViewById(R.id.customerService_editText);
-        ImageView qrCodeImageView = findViewById(R.id.bagdrop__qrcode_imageview);
+        TextInputEditText customerServiceEditText = assistantBinding.customerServiceEditText;
+        ImageView qrCodeImageView = assistantBinding.bagdropQrcodeImageview;
 
         UserViewModel userViewModel = new ViewModelProvider(this)
                 .get(UserViewModel.class);
@@ -65,7 +66,7 @@ public class AssistantActivity extends AppCompatActivity {
 
         compositeDisposable = new CompositeDisposable();
 
-        findViewById(R.id.assistant_checkIn_materialButton).setOnClickListener(view -> {
+        assistantBinding.assistantCheckInMaterialButton.setOnClickListener(view -> {
 
             if(isFlightDateValid(ticket.getFlightDate(),ticket.getDeparture().getTimeOfDeparture())){
                 ticket.setCheckedIn(true);
@@ -77,7 +78,7 @@ public class AssistantActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.assistant_submit_materialButton).setOnClickListener(view -> {
+        assistantBinding.assistantSubmitMaterialButton.setOnClickListener(view -> {
 
             String customerQueryMessage =
                     Objects.requireNonNull(customerServiceEditText.getText()).toString();
@@ -136,7 +137,6 @@ public class AssistantActivity extends AppCompatActivity {
         }
     }
 
-    
     private boolean isFlightDateValid(String flightDate, String flightTime){
 
         LocalDate localDate  = LocalDate.now();

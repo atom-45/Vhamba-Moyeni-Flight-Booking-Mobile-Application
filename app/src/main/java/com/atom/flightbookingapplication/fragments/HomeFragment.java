@@ -24,6 +24,7 @@ import android.widget.TextView;
 import com.atom.flightbookingapplication.R;
 import com.atom.flightbookingapplication.activities.FlightSelectionActivity;
 import com.atom.flightbookingapplication.adapters.ShopAdapter;
+import com.atom.flightbookingapplication.databinding.FragmentHomeBinding;
 import com.atom.flightbookingapplication.models.Constants;
 import com.atom.flightbookingapplication.models.User;
 import com.atom.flightbookingapplication.viewmodels.FirebaseRTDBViewModel;
@@ -51,6 +52,7 @@ public class HomeFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     private CompositeDisposable compositeDisposable;
+    private FragmentHomeBinding homeBinding;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -85,22 +87,20 @@ public class HomeFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        homeBinding = FragmentHomeBinding.inflate(inflater, container, false);
+
+        return homeBinding.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
         compositeDisposable = new CompositeDisposable();
-        CardView cemairCard = view.findViewById(R.id.cemair_cardview);
-        CardView airlinkCard = view.findViewById(R.id.saalink_cardview);
-        CardView saaCard = view.findViewById(R.id.saa_cardview);
-        CardView flysafairCard = view.findViewById(R.id.flysafair_cardview);
 
-        ViewPager2 shopViewPager2 = view.findViewById(R.id.shopView_viewPager);
+        ViewPager2 shopViewPager2 = homeBinding.shopViewViewPager;
         shopViewPager2.setClipToPadding(false);
         shopViewPager2.setClipChildren(false);
         shopViewPager2.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
@@ -121,19 +121,19 @@ public class HomeFragment extends Fragment {
         shopViewPager2.setPageTransformer(compositePageTransformer);
         shopViewPager2.setAdapter(new ShopAdapter(Constants.shops()));
 
-        cemairCard.setOnClickListener(view12 ->
+        homeBinding.cemairCardview.setOnClickListener(view12 ->
                 startActivity(new Intent(getContext(), FlightSelectionActivity.class)
                 .putExtra(Constants.AIRLINE_NAME,"FLYCEMAIR")));
 
-        airlinkCard.setOnClickListener(view1 ->
+        homeBinding.saalinkCardview.setOnClickListener(view1 ->
                 startActivity(new Intent(getContext(), FlightSelectionActivity.class)
                 .putExtra(Constants.AIRLINE_NAME,"AIRLINK")));
 
-        saaCard.setOnClickListener(view13 ->
+        homeBinding.saaCardview.setOnClickListener(view13 ->
                 startActivity(new Intent(getContext(), FlightSelectionActivity.class)
                 .putExtra(Constants.AIRLINE_NAME,"SA_AIRWAYS")));
 
-        flysafairCard.setOnClickListener(view14 ->
+        homeBinding.flysafairCardview.setOnClickListener(view14 ->
                 startActivity(new Intent(getContext(), FlightSelectionActivity.class)
                 .putExtra(Constants.AIRLINE_NAME, "FLYSAFAIR")));
     }
@@ -150,12 +150,12 @@ public class HomeFragment extends Fragment {
         UserViewModel userViewModel = new ViewModelProvider(this)
                 .get(UserViewModel.class);
 
-        TextView currentFlight = view.findViewById(R.id.flightNumberAndAirline_ma_textView);
-        TextView currentDateTextView = view.findViewById(R.id.datetime_textview_b);
-        TextView currentTimeTextView = view.findViewById(R.id.timema_textview_a);
-        TextView currentFromTextView = view.findViewById(R.id.from_airport_textview);
-        TextView currentToTextView = view.findViewById(R.id.to_airport_textview);
-        ImageView checkInImageView = view.findViewById(R.id.checkIn_imageView);
+        TextView currentFlight = homeBinding.flightNumberAndAirlineMaTextView;
+        TextView currentDateTextView = homeBinding.datetimeTextviewB;
+        TextView currentTimeTextView = homeBinding.timemaTextviewA;
+        TextView currentFromTextView = homeBinding.fromAirportTextview;
+        TextView currentToTextView = homeBinding.toAirportTextview;
+        ImageView checkInImageView = homeBinding.checkInImageView;
 
         Disposable disposable = userViewModel.getAllUsers()
                 .subscribeOn(Schedulers.io())

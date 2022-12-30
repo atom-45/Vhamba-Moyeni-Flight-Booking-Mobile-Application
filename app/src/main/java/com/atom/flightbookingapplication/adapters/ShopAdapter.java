@@ -1,24 +1,22 @@
 package com.atom.flightbookingapplication.adapters;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
+import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.atom.flightbookingapplication.R;
+import com.atom.flightbookingapplication.databinding.ShopDetailCardviewBinding;
 import com.atom.flightbookingapplication.models.Shop;
 
 import java.util.List;
-import java.util.Locale;
 
 public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder> {
 
     private final List<Shop> shopList;
+    private LayoutInflater layoutInflater;
 
     public ShopAdapter(List<Shop> shopList) {
         this.shopList = shopList;
@@ -27,26 +25,18 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder> {
     @NonNull
     @Override
     public ShopAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        CardView cardView = (CardView) LayoutInflater.from(parent.getContext()).
-                inflate(R.layout.shop_detail_cardview,parent,false);
-        return new ViewHolder(cardView);
+
+        if(layoutInflater==null){
+            layoutInflater = LayoutInflater.from(parent.getContext());
+        }
+        ShopDetailCardviewBinding shopDetailCardviewBinding =
+                DataBindingUtil.inflate(layoutInflater,R.layout.shop_detail_cardview,parent,false);
+        return new ViewHolder(shopDetailCardviewBinding);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ShopAdapter.ViewHolder holder, int position) {
-
-        CardView shopCardView = holder.cardView;
-        ImageView shopImage = shopCardView.findViewById(R.id.shop_imageView);
-        ImageView shopLogo = shopCardView.findViewById(R.id.shop_logo);
-        TextView shopDescription = shopCardView.findViewById(R.id.shop_description);
-        TextView shopTime = shopCardView.findViewById(R.id.opening_closingTime_textView);
-
-        shopImage.setImageResource(shopList.get(position).getImageBackgroundID());
-        shopLogo.setImageResource(shopList.get(position).getImageLogoID());
-        shopDescription.setText(shopList.get(position).getDescription());
-        shopTime.setText(String.format(Locale.ENGLISH,"%1$s - %2$s",
-                shopList.get(position).getOpeningTime(), shopList.get(position).getClosingTime()));
-
+        holder.bindShops(shopList.get(position));
     }
 
     @Override
@@ -56,10 +46,15 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        private final CardView cardView;
-        public ViewHolder(@NonNull CardView cardView) {
-            super(cardView);
-            this.cardView = cardView;
+        private final ShopDetailCardviewBinding shopDetailCardviewBinding;
+        public ViewHolder(@NonNull ShopDetailCardviewBinding shopDetailCardviewBinding) {
+            super(shopDetailCardviewBinding.getRoot());
+            this.shopDetailCardviewBinding = shopDetailCardviewBinding;
+        }
+
+        public void bindShops(Shop shop){
+            shopDetailCardviewBinding.setShop(shop);
+            shopDetailCardviewBinding.executePendingBindings();
         }
     }
 }

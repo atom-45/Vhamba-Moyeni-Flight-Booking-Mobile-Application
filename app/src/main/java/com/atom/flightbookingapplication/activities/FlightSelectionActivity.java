@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -12,7 +11,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.atom.flightbookingapplication.R;
+import com.atom.flightbookingapplication.databinding.ActivityFlightSelectionBinding;
 import com.atom.flightbookingapplication.models.Constants;
 import com.atom.flightbookingapplication.models.FlightPreference;
 import com.atom.flightbookingapplication.viewmodels.FirebaseRTDBViewModel;
@@ -30,16 +29,20 @@ public class FlightSelectionActivity extends AppCompatActivity {
 
     private CompositeDisposable compositeDisposable;
     private Disposable disposable;
+    private static final String TAG = "FlightSelectionActivity";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_flight_selection);
+        ActivityFlightSelectionBinding activityFlightSelectionBinding =
+                ActivityFlightSelectionBinding.inflate(getLayoutInflater());
 
-        RecyclerView flightSelectionRecyclerView = findViewById(R.id.flightSelection_recyclerView);
-        AutoCompleteTextView dateSelectionAutoTextView = findViewById(R.id.dateSelection_textView);
-        TextView dateTextView = findViewById(R.id.currentFlightDate_textview_b);
+        setContentView(activityFlightSelectionBinding.getRoot());
+
+        RecyclerView flightSelectionRecyclerView = activityFlightSelectionBinding.flightSelectionRecyclerView;
+        AutoCompleteTextView dateSelectionAutoTextView = activityFlightSelectionBinding.dateSelectionTextView;
+        TextView dateTextView = activityFlightSelectionBinding.currentFlightDateTextviewB;
         String currentLocalDate = LocalDate.now().toString();
         LocalDate localDate = LocalDate.parse(currentLocalDate);
         compositeDisposable = new CompositeDisposable();
@@ -70,7 +73,7 @@ public class FlightSelectionActivity extends AppCompatActivity {
 
         compositeDisposable.add(disposable);
 
-        findViewById(R.id.dateSearch_materialButton).setOnClickListener(view -> {
+        activityFlightSelectionBinding.dateSearchMaterialButton.setOnClickListener(view -> {
             String selectedDate = dateSelectionAutoTextView.getText().toString();
             if(selectedDate.equals("")){
                 Toast.makeText(this, "date not selected", Toast.LENGTH_SHORT).show();
@@ -100,6 +103,7 @@ public class FlightSelectionActivity extends AppCompatActivity {
                                      RecyclerView recyclerView,
                                      String airlineName,
                                      String currentDate){
+
         return userViewModel.getAllUsers()
                 .subscribeOn(Schedulers.io())
                 .doOnNext(users -> {

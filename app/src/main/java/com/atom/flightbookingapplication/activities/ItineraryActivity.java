@@ -1,7 +1,6 @@
 package com.atom.flightbookingapplication.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
@@ -9,7 +8,8 @@ import android.os.Bundle;
 
 import android.widget.TextView;
 
-import com.atom.flightbookingapplication.R;
+import com.atom.flightbookingapplication.databinding.ActivityItineraryBinding;
+import com.atom.flightbookingapplication.databinding.OnewayCardviewBinding;
 import com.atom.flightbookingapplication.models.Arrival;
 import com.atom.flightbookingapplication.models.Constants;
 import com.atom.flightbookingapplication.models.Departure;
@@ -27,8 +27,6 @@ import java.time.temporal.ChronoUnit;
 import java.util.Locale;
 import java.util.Random;
 
-import javax.inject.Inject;
-
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.disposables.Disposable;
@@ -42,7 +40,10 @@ public class ItineraryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_itinerary);
+        ActivityItineraryBinding activityItineraryBinding =
+                ActivityItineraryBinding.inflate(getLayoutInflater());
+        setContentView(activityItineraryBinding.getRoot());
+
 
         UserViewModel userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
 
@@ -79,20 +80,22 @@ public class ItineraryActivity extends AppCompatActivity {
                                 substring(0,2).toUpperCase() + randomInteger + "XJ";
 
 
-        CardView itineraryCardView = findViewById(R.id.itinerary);
-        TextView flightDateTextView = itineraryCardView.findViewById(R.id.oneway_flight_date);
-        TextView flightNumberTextView = itineraryCardView.findViewById(R.id.flight_number_textview);
-        TextView airportFromTextView  = itineraryCardView.findViewById(R.id.airport_from_tv);
-        TextView airportToTextView = itineraryCardView.findViewById(R.id.airport_to_tv);
-        TextView flightDurationTextView = itineraryCardView.findViewById(R.id.tof_textview);
-        TextView departureTimeTextView = itineraryCardView.findViewById(R.id.departure_date_one);
-        TextView arrivalTimeTextView = itineraryCardView.findViewById(R.id.arrival_date_one);
-        TextView fullNameTextView = itineraryCardView.findViewById(R.id.fullname_textview2);
-        TextView seatPositionTextView = itineraryCardView.findViewById(R.id.seatnumber_textview2);
-        TextView flightBagsNumberTextView = itineraryCardView.findViewById(R.id.checkedbags_textview2);
-        TextView flightClassTypeTextView = itineraryCardView.findViewById(R.id.plane_class_textview2);
-        TextView flightTicketPriceTextView = itineraryCardView.findViewById(R.id.total_ticketprice_textview2);
-        TextView bookingReferenceTextView = itineraryCardView.findViewById(R.id.bookingReference_textview_b);
+
+        OnewayCardviewBinding itineraryCardView = activityItineraryBinding.itinerary;
+
+        TextView flightDateTextView = itineraryCardView.onewayFlightDate;
+        TextView flightNumberTextView = itineraryCardView.flightNumberTextview;
+        TextView airportFromTextView  = itineraryCardView.airportFromTv;
+        TextView airportToTextView = itineraryCardView.airportToTv;
+        TextView flightDurationTextView = itineraryCardView.tofTextview;
+        TextView departureTimeTextView = itineraryCardView.departureDateOne;
+        TextView arrivalTimeTextView = itineraryCardView.arrivalDateOne;
+        TextView fullNameTextView = itineraryCardView.fullnameTextview2;
+        TextView seatPositionTextView = itineraryCardView.seatnumberTextview2;
+        TextView flightBagsNumberTextView = itineraryCardView.checkedbagsTextview2;
+        TextView flightClassTypeTextView = itineraryCardView.planeClassTextview2;
+        TextView flightTicketPriceTextView = itineraryCardView.totalTicketpriceTextview2;
+        TextView bookingReferenceTextView = itineraryCardView.bookingReferenceTextviewB;
 
 
         Disposable disposable = userViewModel.getAllUsers()
@@ -118,7 +121,8 @@ public class ItineraryActivity extends AppCompatActivity {
                     seatPositionTextView.setText(seatPosition);
                     flightBagsNumberTextView.setText(
                             String.format(Locale.ENGLISH,"%s x 20kg",numberOfBags));
-                    flightDurationTextView.setText(flightDuration);
+                    flightDurationTextView.setText(
+                            String.format(Locale.ENGLISH,"Flight Duration: %s",flightDuration));
                     flightClassTypeTextView.setText(classType);
                     flightTicketPriceTextView.setText(String.format(Locale.ENGLISH,
                             "R %.2f",ticketPrice));
@@ -130,7 +134,7 @@ public class ItineraryActivity extends AppCompatActivity {
 
         compositeDisposable.add(disposable);
 
-        findViewById(R.id.itinerary_payButton).setOnClickListener(view -> {
+        activityItineraryBinding.itineraryPayButton.setOnClickListener(view -> {
 
             Disposable disposable1 = userViewModel.getAllUsers()
                     .subscribeOn(Schedulers.io())

@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragments.FlightPreferenceFragment">
+
+        <TextView
+            android:id="@+id/common_flights_textview1"
+            android:layout_width="300dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="36dp"
+            android:autoSizeMaxTextSize="25sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="casual"
+            android:text="@string/airport_selection"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.112"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/common_flights_textview2"
+            android:layout_width="300dp"
+            android:layout_height="130dp"
+            android:autoSizeMaxTextSize="18sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/background_shape"
+            android:gravity="start"
+            android:padding="8dp"
+            app:layout_constraintStart_toStartOf="@+id/common_flights_textview1"
+            app:layout_constraintTop_toBottomOf="@+id/common_flights_textview1" />
+
+        <TextView
+            android:id="@+id/flight_preference_textview1"
+            android:layout_width="220dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:autoSizeMaxTextSize="25sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="casual"
+            android:text="@string/flight_preferences"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/materialDivider9"
+            app:layout_constraintHorizontal_bias="0.093"
+            app:layout_constraintStart_toStartOf="@+id/materialDivider9"
+            app:layout_constraintTop_toBottomOf="@+id/materialDivider9" />
+
+        <TextView
+            android:id="@+id/numberOfBags_textview1"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="16dp"
+            android:autoSizeMaxTextSize="25sp"
+            android:autoSizeMinTextSize="10sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:text="@string/no_of_bags"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/numberOfBags_textview2"
+            app:layout_constraintTop_toBottomOf="@+id/flight_preference_textview1" />
+
+        <TextView
+            android:id="@+id/numberOfBags_textview2"
+            android:layout_width="75dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="3dp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/background_shape"
+            android:gravity="center"
+            app:layout_constraintEnd_toStartOf="@+id/seat_textview2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numberOfBags_textview1" />
+
+        <TextView
+            android:id="@+id/seat_textview1"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="24dp"
+            android:autoSizeMaxTextSize="25sp"
+            android:autoSizeMinTextSize="10sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:text="@string/seat"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/seat_textview2"
+            app:layout_constraintTop_toTopOf="@+id/numberOfBags_textview1" />
+
+        <TextView
+            android:id="@+id/seat_textview2"
+            android:layout_width="75dp"
+            android:layout_height="40dp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/background_shape"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@+id/numberOfBags_textview2"
+            app:layout_constraintEnd_toStartOf="@+id/class_textview2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/numberOfBags_textview2"
+            app:layout_constraintTop_toTopOf="@+id/numberOfBags_textview2" />
+
+        <TextView
+            android:id="@+id/class_textview1"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginStart="12dp"
+            android:autoSizeMaxTextSize="25sp"
+            android:autoSizeMinTextSize="10sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:text="@string/airline_class"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/class_textview2"
+            app:layout_constraintTop_toTopOf="@+id/seat_textview1" />
+
+        <TextView
+            android:id="@+id/class_textview2"
+            android:layout_width="75dp"
+            android:layout_height="40dp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/background_shape"
+            android:gravity="center"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/seat_textview2"
+            app:layout_constraintEnd_toStartOf="@+id/food_textview2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/seat_textview2"
+            app:layout_constraintTop_toTopOf="@+id/seat_textview2" />
+
+        <TextView
+            android:id="@+id/food_textview1"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:autoSizeMaxTextSize="25sp"
+            android:autoSizeMinTextSize="10sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:text="@string/food"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/food_textview2"
+            app:layout_constraintHorizontal_bias="0.395"
+            app:layout_constraintStart_toStartOf="@+id/food_textview2"
+            app:layout_constraintTop_toTopOf="@+id/class_textview1" />
+
+        <TextView
+            android:id="@+id/food_textview2"
+            android:layout_width="75dp"
+            android:layout_height="40dp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/background_shape"
+            android:gravity="center"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/class_textview2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/class_textview2"
+            app:layout_constraintTop_toTopOf="@+id/class_textview2" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider9"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/common_flights_textview2" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/materialDivider8"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numberOfBags_textview2" />
+
+        <TextView
+            android:id="@+id/card_details_textview1"
+            android:layout_width="140dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="12dp"
+            android:autoSizeMaxTextSize="25sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:fontFamily="casual"
+            android:text="@string/card_details"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/materialDivider8"
+            app:layout_constraintHorizontal_bias="0.063"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialDivider8" />
+
+        <TextView
+            android:id="@+id/card_number_textview1"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="30dp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:text="@string/card_number"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/card_number_textview2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/card_number_textview2"
+            app:layout_constraintTop_toBottomOf="@+id/card_details_textview1" />
+
+        <TextView
+            android:id="@+id/card_number_textview2"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/background_shape"
+            android:gravity="center"
+            android:padding="5dp"
+            app:layout_constraintEnd_toStartOf="@+id/cvv_textview2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_number_textview1" />
+
+        <TextView
+            android:id="@+id/cvv_textview1"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:text="@string/cvv"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/cvv_textview2"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="@+id/cvv_textview2"
+            app:layout_constraintTop_toTopOf="@+id/card_number_textview1" />
+
+        <TextView
+            android:id="@+id/cvv_textview2"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/background_shape"
+            android:gravity="center"
+            android:padding="3dp"
+            app:layout_constraintEnd_toStartOf="@+id/expiryDate_textview2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/card_number_textview2"
+            app:layout_constraintTop_toBottomOf="@+id/cvv_textview1" />
+
+        <TextView
+            android:id="@+id/expiryDate_textview1"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:text="@string/expiry_date"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/expiryDate_textview2"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/expiryDate_textview2"
+            app:layout_constraintTop_toTopOf="@+id/cvv_textview1" />
+
+        <TextView
+            android:id="@+id/expiryDate_textview2"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:autoSizeMaxTextSize="20sp"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:background="@drawable/background_shape"
+            android:gravity="center"
+            android:padding="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cvv_textview2"
+            app:layout_constraintTop_toBottomOf="@+id/expiryDate_textview1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/edit_materialButton1"
+            android:layout_width="200dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="60dp"
+            android:text="@string/edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_number_textview2" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

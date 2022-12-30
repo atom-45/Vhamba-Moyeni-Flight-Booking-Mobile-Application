@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.ItineraryActivity">
+
+        <include
+            android:id="@+id/itinerary"
+            layout="@layout/oneway_cardview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/itinerary_payButton"
+            android:layout_width="150dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="72dp"
+            android:layout_marginBottom="75dp"
+            android:text="@string/pay"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/itinerary"
+            app:layout_constraintStart_toStartOf="@+id/itinerary"
+            app:layout_constraintTop_toBottomOf="@+id/itinerary" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

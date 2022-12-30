@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.FlightSelectionActivity">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dateSelection_textInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:hint="@string/date_selection"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <AutoCompleteTextView
+                android:id="@+id/dateSelection_textView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="2dp"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                tools:ignore="LabelFor" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/currentFlightDate_textview_a"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="36dp"
+            android:text="Date:"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/dateSelection_textInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/dateSelection_textInputLayout" />
+
+        <TextView
+            android:id="@+id/currentFlightDate_textview_b"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:text="Tuesday, 16 August 2022"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/dateSearch_materialButton"
+            app:layout_constraintTop_toTopOf="@+id/currentFlightDate_textview_a" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/dateSearch_materialButton"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/search"
+            app:layout_constraintBottom_toBottomOf="@+id/dateSelection_textInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.836"
+            app:layout_constraintStart_toEndOf="@+id/dateSelection_textInputLayout"
+            app:layout_constraintTop_toTopOf="@+id/dateSelection_textInputLayout"
+            app:layout_constraintVertical_bias="0.0" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/flightSelection_recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="600dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="96dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/background_recyclerview"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dateSelection_textInputLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
